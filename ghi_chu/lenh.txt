@@ -1,0 +1,4 @@
+View=div
+flex: phần trăm của thẻ đó
+justifyContent: căn chỉnh trên dưới
+alignItem: căng trái phải của thẻ
