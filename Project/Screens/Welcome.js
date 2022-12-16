@@ -1,7 +1,14 @@
 import React from 'react';
-import { Image, Text, View, ImageBackground } from 'react-native'
+import {
+    Image,
+    Text,
+    View,
+    ImageBackground,
+    TouchableOpacity
+} from 'react-native'
 
-
+import { icons, images } from '../constants/index.js'
+import Icon from 'react-native-vector-icons/dist/FontAwesome'
 
 function Welcome(props) {
     return <View style={{
@@ -9,7 +16,7 @@ function Welcome(props) {
         flex: 100
     }}>
         <ImageBackground source={
-            require('../front_end/ez_background.jpg')
+            images.background
         }
             resizeMode='cover'
             style={{
@@ -22,14 +29,14 @@ function Welcome(props) {
 
 
             }}>
-                <View style={{
+                <View style={{ //part 0
                     flexDirection: 'row',
                     height: 70,
                     justifyContent: 'flex-start',
                     alignItems: 'center'
                 }}>
                     <Image
-                        source={require('../front_end/icon_fire.png')}
+                        source={icons.fire}
                         style={{
                             width: 60,
                             height: 70,
@@ -45,7 +52,7 @@ function Welcome(props) {
                     </Text>
                     <View style={{ flex: 1 }} />
                     <Image
-                        source={require('../front_end/icon_question.png')}
+                        source={icons.question}
                         style={{
                             width: 30,
                             height: 30,
@@ -56,10 +63,9 @@ function Welcome(props) {
                 </View>
 
             </View>
-            <View style={{
+            <View style={{ // part 1
                 flex: 15,
                 width: '100%',
-                backgroundColor: 'skyblue',
                 justifyContent: 'center',
                 alignItems: 'center'
             }}>
@@ -87,12 +93,70 @@ function Welcome(props) {
                     }}>Please select your account type!
                 </Text>
             </View>
-            <View style={{
-                backgroundColor: 'yellow',
+            <View style={{ // part 3
+                backgroundColor: 'red',
                 flex: 30
-            }} />
-            <View style={{
-                backgroundColor: 'white',
+
+            }}>
+
+                <TouchableOpacity style={{ // bottom 1
+                    borderColor: 'white',
+                    borderWidth: 2,
+                    height: 45,
+                    borderRadius: 5,
+                    marginHorizontal: 15,
+                    marginVertical: 10,
+                    justifyContent: 'center',
+                    alignContent: 'center',
+                    color: 'skyblue',
+                    backgroundColor: 'white',
+                }}>
+                    <Icon
+                        name={'check-circle'}
+                        style={{
+                            color: '#14d294',
+                            backgroundColor: 'black',
+                            fontSize: 20,
+                            width: 20,
+                            position: 'absolute',
+
+                        }} />
+                    <Text
+                        style={{
+                            color: '#06a5fe',
+                            fontWeight: 'bold',
+                            width: 180,
+                            marginLeft: 105,
+                            backgroundColor: 'black',
+                        }}>
+                        Sinh viên đã có tài khoản
+                    </Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={{ // bottom 2
+                    borderColor: 'white',
+                    borderWidth: 2,
+                    height: 45,
+                    borderRadius: 5,
+                    marginHorizontal: 15,
+                    marginVertical: 10,
+                    justifyContent: 'center',
+                    alignContent: 'center',
+                    color: 'skyblue',
+                    backgroundColor: 'white',
+                }}>
+                    <Text
+                        style={{
+                            color: '#06a5fe',
+                            fontWeight: 'bold',
+                            width: 180,
+                            marginLeft: 100,
+                        }}>
+                        Sinh viên chưa có tài khoản
+                    </Text>
+                </TouchableOpacity>
+            </View>
+            <View style={{ // part 4
+                backgroundColor: 'yellow',
                 flex: 20
             }} />
         </ImageBackground >
