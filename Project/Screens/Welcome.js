@@ -4,11 +4,10 @@ import {
     Text,
     View,
     ImageBackground,
-    TouchableOpacity
 } from 'react-native'
-
 import { icons, images } from '../constants/index.js'
-import Icon from 'react-native-vector-icons/dist/FontAwesome'
+import { UIButton } from '../components'
+
 
 function Welcome(props) {
     return <View style={{
@@ -98,62 +97,13 @@ function Welcome(props) {
                 flex: 30
 
             }}>
-
-                <TouchableOpacity style={{ // bottom 1
-                    borderColor: 'white',
-                    borderWidth: 2,
-                    height: 45,
-                    borderRadius: 5,
-                    marginHorizontal: 15,
-                    marginVertical: 10,
-                    justifyContent: 'center',
-                    alignContent: 'center',
-                    color: 'skyblue',
-                    backgroundColor: 'white',
-                }}>
-                    <Icon
-                        name={'check-circle'}
-                        style={{
-                            color: '#14d294',
-                            backgroundColor: 'black',
-                            fontSize: 20,
-                            width: 20,
-                            position: 'absolute',
-
-                        }} />
-                    <Text
-                        style={{
-                            color: '#06a5fe',
-                            fontWeight: 'bold',
-                            width: 180,
-                            marginLeft: 105,
-                            backgroundColor: 'black',
-                        }}>
-                        Sinh viên đã có tài khoản
-                    </Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={{ // bottom 2
-                    borderColor: 'white',
-                    borderWidth: 2,
-                    height: 45,
-                    borderRadius: 5,
-                    marginHorizontal: 15,
-                    marginVertical: 10,
-                    justifyContent: 'center',
-                    alignContent: 'center',
-                    color: 'skyblue',
-                    backgroundColor: 'white',
-                }}>
-                    <Text
-                        style={{
-                            color: '#06a5fe',
-                            fontWeight: 'bold',
-                            width: 180,
-                            marginLeft: 100,
-                        }}>
-                        Sinh viên chưa có tài khoản
-                    </Text>
-                </TouchableOpacity>
+                <UIButton
+                    onPress={() => {
+                        alert('Đã đăng nhập thành công')
+                    }}
+                    title='Sinh viên đã có tài khoản!!!'
+                    isSelected={true}
+                />
             </View>
             <View style={{ // part 4
                 backgroundColor: 'yellow',
@@ -163,6 +113,7 @@ function Welcome(props) {
 
     </View >
 }
+
 export default Welcome
 
 
