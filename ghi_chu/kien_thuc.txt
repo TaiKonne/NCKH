@@ -2,3 +2,4 @@ const->props->let
 const(không thay đổi trong quá trình chạy)
 let(biến chạy được nằm bên trong {})
 props(không bh được thay đổi giá trị của nó(only read))
+state -> khi state thay đổi thì state được thay đổi theo điều kiện đã cho

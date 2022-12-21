@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {
     Image,
     Text,
@@ -10,6 +10,27 @@ import { UIButton } from '../components'
 
 
 function Welcome(props) {
+    // state khi thay đổi thì UI được load lại
+    // 
+
+    //like getter/setter
+    const [accountTypes, setAccountTyeps] = useState([
+        {
+            name: 'Sinh viên đã có tài khoản',
+            al: 'Đăng nhập thành công',
+            isSelected: true,
+        },
+        {
+            name: 'Sinh viên chưa có tài khoản',
+            al: 'Đăng ký tài khoản',
+            isSelected: false,
+        },
+        {
+            name: 'Quên tài khoản mật khẩu',
+            al: 'Quên mẹ rồi',
+            isSelected: false,
+        }
+    ])
     return <View style={{
         backgroundColor: 'skyblue',
         flex: 100
@@ -20,8 +41,7 @@ function Welcome(props) {
             resizeMode='cover'
             style={{
                 flex: 100,
-            }}
-        >
+            }}>
             <View style={{
 
                 flex: 8,
@@ -97,13 +117,19 @@ function Welcome(props) {
                 flex: 30
 
             }}>
-                <UIButton
-                    onPress={() => {
-                        alert('Đã đăng nhập thành công')
+                {accountTypes.map(accountType =>
+                    <UIButton onPress={() => {
+                        let newAccountTypes = accountTypes.map(eachAccountType => {
+                            return {...eachAccountType,
+                                isSelected: eachAccountType.name == accountType.name
+                            }
+                        })
+                        setAccountTyeps(newAccountTypes);
                     }}
-                    title='Sinh viên đã có tài khoản!!!'
-                    isSelected={true}
-                />
+                        title={accountType.name}
+                        isSelected={accountType.isSelected}
+                    />)
+                }
             </View>
             <View style={{ // part 4
                 backgroundColor: 'yellow',
@@ -164,5 +190,4 @@ export default Welcome
 //     </View>
 //     //.map là ánh xạ vào biến nằm trong () và {} được xem là mảng để xuất mảng ra ngoài
 // }
-
 
