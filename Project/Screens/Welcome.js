@@ -4,10 +4,11 @@ import {
     Text,
     View,
     ImageBackground,
+    TouchableOpacity,
 } from 'react-native'
-import { icons, images } from '../constants/index.js'
+import { icons, images, colors } from '../constants/index.js'
 import { UIButton } from '../components'
-
+import Icon from 'react-native-vector-icons/dist/FontAwesome'
 
 function Welcome(props) {
     // state khi thay đổi thì UI được load lại
@@ -27,7 +28,7 @@ function Welcome(props) {
         },
         {
             name: 'Quên tài khoản mật khẩu',
-            al: 'Quên mẹ rồi',
+            al: 'Quên mật khẩu',
             isSelected: false,
         }
     ])
@@ -67,10 +68,18 @@ function Welcome(props) {
                     <Text style={{
                         color: 'white'
                     }}>
-                        Welcome to the world
+                        Welcome to the hell broo
                     </Text>
                     <View style={{ flex: 1 }} />
-                    <Image
+                    <Icon name={"question-circle"}
+
+                        color={'white'}
+                        style={{
+                            fontSize: 20,
+                            marginEnd: 20
+                        }}
+                    />
+                    {/* <Image
                         source={icons.question}
                         style={{
                             width: 30,
@@ -78,7 +87,7 @@ function Welcome(props) {
                             // tintColor:'white'
                             marginStart: 90
                         }}
-                    />
+                    /> */}
                 </View>
 
             </View>
@@ -113,18 +122,18 @@ function Welcome(props) {
                 </Text>
             </View>
             <View style={{ // part 3
-                backgroundColor: 'red',
+                // backgroundColor: 'red',
                 flex: 30
 
             }}>
                 {accountTypes.map(accountType =>
                     <UIButton onPress={() => {
-                        let newAccountTypes = accountTypes.map(eachAccountType => {
-                            return {...eachAccountType,
+                        setAccountTyeps(accountTypes.map(eachAccountType => {
+                            return {
+                                ...eachAccountType,
                                 isSelected: eachAccountType.name == accountType.name
                             }
-                        })
-                        setAccountTyeps(newAccountTypes);
+                        }));
                     }}
                         title={accountType.name}
                         isSelected={accountType.isSelected}
@@ -132,9 +141,44 @@ function Welcome(props) {
                 }
             </View>
             <View style={{ // part 4
-                backgroundColor: 'yellow',
-                flex: 20
-            }} />
+                // backgroundColor: 'yellow',
+                flex: 20,
+
+            }}>
+                <UIButton
+                    style={{
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                    }}
+                    title={'NEXT'}
+                />
+                <Text
+                    style={{
+                        color: 'white',
+                        fontWeight: 'bold',
+                        // fontSize: 14,
+                        alignSelf: 'center'
+                    }}>Don't know what account type use?
+                </Text>
+
+                <TouchableOpacity
+                    onPress={() => {
+                        alert('Press register')
+                    }}
+                    style={{   // button register
+                        padding: 4
+                    }}>
+                    <Text
+                        style={{
+                            color: colors.primary,
+                            fontWeight: 'bold',
+                            // fontSize: 14,
+                            alignSelf: 'center',
+                            textDecorationLine: 'underline'
+                        }}>Register
+                    </Text>
+                </TouchableOpacity>
+            </View>
         </ImageBackground >
 
     </View >

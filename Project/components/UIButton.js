@@ -1,6 +1,8 @@
 import { TouchableOpacity, Text } from 'react-native'
 import React from 'react'
 import Icon from 'react-native-vector-icons/dist/FontAwesome'
+import {colors} from '../constants/'
+
 
 function UIButton(props) {
     const { onPress, title, isSelected } = props
@@ -14,6 +16,7 @@ function UIButton(props) {
             marginHorizontal: 15,
             marginVertical: 10,
             justifyContent: 'center',
+            // alignSelf:'center',
             alignContent: 'center',
             color: 'skyblue',
             backgroundColor: (isSelected == true) ? 'white' : null
@@ -30,10 +33,9 @@ function UIButton(props) {
             }} />}
         <Text
             style={{
-                color: '#06a5fe',
+                color: isSelected == true ? colors.primary : 'white',
                 fontWeight: 'bold',
-                width: 180,
-                marginLeft: 105,
+                alignSelf:'center',
             }}>
             {props.title}
         </Text>

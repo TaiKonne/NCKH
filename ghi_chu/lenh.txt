@@ -11,3 +11,4 @@ marginHoriontal: chỉnh căng trái phải
 marginVartical: chỉnh trên dưới
 borderRadius: chỉnh cạnh tròn cho bottom
 position: 'absolute': chỉnh vị trí của các khối bằng nhau trên 1 hàng
+alignSelf:'center': tự căng giữa cho chính nó
