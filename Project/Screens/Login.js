@@ -1,78 +1,85 @@
 import React, { useState, useEffect } from 'react';
 import {
-    Text,
+    SafeAreaView,
+    StatusBar,
+    StyleSheet,
     View,
-    Image,
-    ImageBackground,
+    Text,
+    Dimensions,
     TouchableOpacity,
-    TextInput,
-    LogBox,
-} from 'react-native'
+    Image
+} from 'react-native';
 
 import { images, colors, icons, fontSizes } from '../constants'
 import Icon from 'react-native-vector-icons/dist/FontAwesome'
 import { UIButton } from '../components'
-const styles = ({
-    input: {
-        height: 40,
-        margin: 12,
-        borderWidth: 1,
-        padding: 10,
-    },
-});
+
 function Login(Props) {
-    return <View style={{
-        flex: 100,
-        backgroundColor: 'white'
-    }}>
-        <View
-            style={{
-                backgroundColor: 'red',
-                height: '40%',
-                justifyContent: 'center',
-                alignItems: 'center',
-            }}>
-            <Image
-                source={images.icon_truong1}
-                style={{
-                    backgroundColor: 'red',
-                    height: 120,
-                    width: 200
-                }}
-            />
-            <Text
-                style={{
-                    fontSize: 35,
-                    fontWeight: 'bold',
-                    color: 'black',
-                    marginTop: 25,
-                    width: 90,
-                    backgroundColor: 'blue',
-                    // alignSelf: 'center',
+    return <View>
+        <SafeAreaView style={styles.safeArea}>
+            <StatusBar barStyle="light-content" />
+            <View style={styles.container}>
+                <View style={styles.topContent}>
+                    <Text style={styles.mainText}>
+                        Login
+                    </Text>
+                </View>
+                <View style={styles.bottomContent}>
+                    <TouchableOpacity style={styles.googleButton}>
+                        <Image
+                            style={styles.googleIcon}
+                            source={
+                                icons.logo_gg
+                            }
+                        />
+                        <Text style={styles.googleButtonText}>Sign in with Google</Text>
+                    </TouchableOpacity>
+                </View>
+            </View>
+        </SafeAreaView>
+    </View>
+};
 
-                }}>
-                Login
-            </Text>
-        </View>
-        <View
-            style={{
-                backgroundColor: 'green',
-                height: '40%',
-                justifyContent: 'center',
-                // alignItems: 'center',
-            }}>
-            <UIButton
-
-                style={{
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                }}
-                title={'NEXT'}
-
-
-            />
-        </View>
-    </View >
-}
+const styles = StyleSheet.create({
+    safeArea: {
+        backgroundColor: "#262b2f"
+    },
+    container: {
+        height: Dimensions.get('window').height,
+        backgroundColor: "#262b2f",
+    },
+    topContent: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
+    bottomContent: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
+    mainText: {
+        fontSize: 54,
+        color: "white",
+    },
+    googleButton: {
+        backgroundColor: "white",
+        borderRadius: 4,
+        paddingHorizontal: 34,
+        paddingVertical: 16,
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    googleButtonText: {
+        marginLeft: 16,
+        fontSize: 18,
+        fontWeight: '600'
+    },
+    googleIcon: {
+        height: 24,
+        width: 24
+    }
+});
 
 export default Login;

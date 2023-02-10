@@ -7,7 +7,7 @@ javascript
 import { AppRegistry } from 'react-native'
 import React from 'react'
 import { name as appName } from './app.json'
-import { Welcome, Login } from './Screens/'
+import {Login, Home } from './Screens/'
 
 AppRegistry.registerComponent(appName,
-    () => () => <Login />)
+    () => () => <Home />)
