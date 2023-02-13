@@ -15,7 +15,8 @@ import Icon from 'react-native-vector-icons/dist/FontAwesome'
 import { UIButton } from '../components'
 
 function Login(Props) {
-    return <View>
+    return <View
+        style={{ flex: 1 }}>
         <SafeAreaView style={styles.safeArea}>
             <StatusBar barStyle="light-content" />
             <View style={styles.container}>

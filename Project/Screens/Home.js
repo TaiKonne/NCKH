@@ -15,11 +15,28 @@ function Home(props) {
         style={{
             flex: 1
         }}>
+        <View
+            style={{
+                backgroundColor: 'blue',
+                height: 40
+            }}>
+            <Text>nút tìm kiếm với logo trường và tin nhắn</Text>
+        </View>
+        <View>
+            <Text>
+                ảnh đại diện và đăng bài viết
+            </Text>
+        </View>
         <View style={{
             backgroundColor: 'green',
-            height: '20%',
+            height: 50,
         }}>
             <Text>ngu vl mayfdsaffjkslfdsjaklf;jdksjkla;</Text>
+        </View>
+        <View>
+            <Text>
+                phần newsfeed
+            </Text>
         </View>
     </View>
 };
