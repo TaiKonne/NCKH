@@ -2,7 +2,7 @@ import images from "./image"
 import icons from "./icon"
 import colors from "./colors"
 import fontSizes from "./fontSizes"
-export{
+export {
     images,
     icons,
     colors,
