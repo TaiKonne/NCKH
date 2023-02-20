@@ -23,7 +23,7 @@ function Home(props) {
                 avatar: 'https://64.media.tumblr.com/faaae55b9e5ab44fd8de1fb8c4ac94b8/02ee1dcb4b1e79bc-b1/s250x400/8bd68f7f7c90cf088a3f48fba60167bc420a9184.jpg',
                 status: 'Tôi có ước muốn đơn giản là được ngủ cả ngày.',
                 video: '',
-                ima: '',
+                ima: 'https://i.pinimg.com/564x/88/c9/93/88c993b86a5c7483bd1412dd60122f99.jpg',
                 interact: 'like, cmt, share',
             },
             {
@@ -39,7 +39,7 @@ function Home(props) {
                 avatar: 'https://scontent.fsgn3-1.fna.fbcdn.net/v/t39.30808-1/295734462_1272754933256041_6976567951737309521_n.jpg?stp=dst-jpg_p320x320&_nc_cat=104&ccb=1-7&_nc_sid=7206a8&_nc_ohc=Pj28Gj1ybQYAX8dHdLo&_nc_ht=scontent.fsgn3-1.fna&oh=00_AfAWQ7NLohNm6Uj-JGVhVCUZJwEdTLM6L2zVZe0R9tZwzQ&oe=63F6A221',
                 status: 'Trời ơi, hôm nay trời đẹp thế nhỉ',
                 video: '',
-                ima: '',
+                ima: 'https://scontent.fsgn13-4.fna.fbcdn.net/v/t39.30808-6/309156219_472048304944448_1140633890876958604_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=63DPgZhrdBsAX9qGngg&_nc_ht=scontent.fsgn13-4.fna&oh=00_AfCRe5m757qmWmd9d1s0wvM2goo-ULRYrKp1DEHiNirsfg&oe=63F90DB6',
                 interact: 'like, cmt, share',
             },
             {
@@ -54,7 +54,7 @@ function Home(props) {
                 name: 'Anh Minh',
                 avatar: 'https://scontent.fsgn13-4.fna.fbcdn.net/v/t1.6435-9/84551161_514130042857644_6888616149617999872_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=174925&_nc_ohc=nsaah9aWH5QAX8g-9Er&_nc_ht=scontent.fsgn13-4.fna&oh=00_AfCpgLjM9czLG9IWAvTdrGUSenLV8TNhA9mTTQGFFeReYQ&oe=64186CE4',
                 status: 'Tôi nhớ những ngày được đi chơi vui vẻ',
-                video: '',
+                video: 'https://drive.google.com/uc?export=download&id=1d_A9I2OT9vyppWyPEI81NVLcQgxwd8Yo',
                 ima: '',
                 interact: 'like, cmt, share',
             },
