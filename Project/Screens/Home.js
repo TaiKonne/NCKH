@@ -31,7 +31,7 @@ function Home(props) {
                 avatar: 'https://64.media.tumblr.com/faaae55b9e5ab44fd8de1fb8c4ac94b8/02ee1dcb4b1e79bc-b1/s250x400/8bd68f7f7c90cf088a3f48fba60167bc420a9184.jpg',
                 status: 'Trời ơi, hôm nay trời đẹp thế nhỉ',
                 video: '',
-                ima: '',
+                ima: 'https://images.baodantoc.vn/uploads/2022/Th%C3%A1ng%205/Ng%C3%A0y_26/Anh/untitled%20folder/282030013_551948049833120_1274640577714723578_n.jpg',
                 interact: 'like, cmt, share',
             },
             {
