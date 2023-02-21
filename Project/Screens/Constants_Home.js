@@ -18,6 +18,7 @@ constant: text and !image and !video
 constant: text and image and !video
 constant: text and !image and video
 */
+
 function Constants_Home(props) {
     let { video, ima } = props.cons
     if (video == '' && ima == '') {
@@ -59,6 +60,7 @@ var styles = StyleSheet.create({ // style video anh Minh cầu nguyện
     },
     backgroundVideo: {
         position: 'absolute',
+        backgroundColor: 'red',
         top: 0,
         left: 0,
         bottom: 0,

@@ -85,22 +85,5 @@ function Homeid(props) {
     )
 
 };
-var styles = StyleSheet.create({ // style video anh Minh cầu nguyện
-    container: {
-        backgroundColor: 'black',
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        width: 'auto',
-        height: 400,
-    },
-    backgroundVideo: {
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        bottom: 0,
-        right: 0,
 
-    },
-});
 export default Homeid
