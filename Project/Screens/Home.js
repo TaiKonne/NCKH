@@ -74,9 +74,9 @@ function Home(props) {
             }
         ]
     )
-    const [searchText, setsearchtext] = useState('');
-    // const filteredIds = () => foods.filter(eachId => eachId.name.toLowerCase()
-    //     .includes(searchText.toLowerCase()))
+    const [searchText, setSearchText] = useState('');
+    const filteredIds = () => Id.filter(eachId => eachId.name.toLowerCase()
+        .includes(searchText.toLowerCase()))
     return <View style={{
         flex: 1,
         backgroundColor: 'skyblue'
@@ -97,9 +97,9 @@ function Home(props) {
                 name='search' size={20} color={'black'} />
             <TextInput
                 autoCorrect={false}
-                // onChangeText={(text) => {
-                // setsearchtext(text)
-
+                onChangeText={(text) => {
+                    setSearchText(text)
+                }}
                 style={{
                     backgroundColor: 'blue',
                     height: 40,
@@ -118,8 +118,8 @@ function Home(props) {
         </ScrollView> */}
 
         <FlatList
-            data={Id}
-            renderItem={({ item }) => <Homeid user={item} key={item.name}/>}
+            data={filteredIds()}
+            renderItem={({ item }) => <Homeid user={item} key={item.name} />}
             keyExtractor={eachId => eachId.name}
         />
 
