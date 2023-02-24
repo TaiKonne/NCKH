@@ -17,7 +17,7 @@ import Constants_Home from './Constants_Home.js'
 
 
 function Homeid(props) {
-    let { name, avatar, status, video, ima, interact } = props.user //destructuring
+    let { name, avatar, status, video, ima, interact } = props.user; //destructuring
     let ID = props.user
     return (
         <View>

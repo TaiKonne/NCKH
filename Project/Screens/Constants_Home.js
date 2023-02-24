@@ -21,6 +21,8 @@ constant: text and !image and video
 
 function Constants_Home(props) {
     let { video, ima } = props.cons
+
+
     if (video == '' && ima == '') {
     }
     else if (video == '') {
@@ -43,6 +45,7 @@ function Constants_Home(props) {
                     style={styles.backgroundVideo}
                     paused={true}
                     controls={true}
+                    resizeMode='contain'
                 />
             </View>
         )
@@ -52,20 +55,17 @@ function Constants_Home(props) {
 var styles = StyleSheet.create({ // style video anh Minh cầu nguyện
     container: {
         backgroundColor: 'black',
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        width: 'auto',
+        width: '100%',
         height: 400,
     },
     backgroundVideo: {
         position: 'absolute',
-        backgroundColor: 'red',
+        backgroundColor: 'black',
         top: 0,
         left: 0,
         bottom: 0,
         right: 0,
-
+        height: '100%',
     },
 });
 
