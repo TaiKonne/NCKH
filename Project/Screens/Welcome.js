@@ -98,7 +98,10 @@ function Welcome(props) {
                 flex: 15,
                 width: '100%',
                 justifyContent: 'center',
-                alignItems: 'center'
+                alignItems: 'center',
+                borderWidth: 1,
+                borderColor: 'yellow',
+                marginTop: 20
             }}>
                 <Text
                     style={{
@@ -126,64 +129,27 @@ function Welcome(props) {
             </View>
             <View style={{ // part 3
                 // backgroundColor: 'red',
-                flex: 30
-
+                flex: 30,
+                borderWidth: 1,
+                borderColor: 'yellow',
+                // marginVertical:'center',
+                justifyContent: 'center',
+                marginTop: 20
             }}>
-                {accountTypes.map(accountType =>
-                    <UIButton onPress={() => {
-                        setAccountTyeps(accountTypes.map(eachAccountType => {
-                            return {
-                                ...eachAccountType,
-                                isSelected: eachAccountType.name == accountType.name
-                            }
-                        }));
+                <UIButton
+                    title={'Next'.toUpperCase()}
+                    onPress={()=>{
+                        navigate('Login')
                     }}
-                        title={accountType.name}
-                        isSelected={accountType.isSelected}
-                    />)
-                }
+                />
             </View>
             <View style={{ // part 4
                 // backgroundColor: 'yellow',
                 flex: 20,
 
             }}>
-                <UIButton
-                    style={{
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                    }}
-                    title={'NEXT'}
-                />
-                <Text
-                    style={{
-                        color: 'white',
-                        fontWeight: 'bold',
-                        // fontSize: 14,
-                        alignSelf: 'center'
-                    }}>Don't know what account type use?
-                </Text>
-
-                <TouchableOpacity
-                    onPress={() => {
-                        alert('Press register')
-                    }}
-                    style={{   // button register
-                        padding: 4
-                    }}>
-                    <Text
-                        style={{
-                            color: colors.primary,
-                            fontWeight: 'bold',
-                            // fontSize: 14,
-                            alignSelf: 'center',
-                            textDecorationLine: 'underline'
-                        }}>Register
-                    </Text>
-                </TouchableOpacity>
             </View>
         </ImageBackground >
-
     </View >
 }
 
