@@ -1,31 +1,95 @@
 import * as React from 'react'
-
 import {
-    Image,
-    Text,
-    View,
-    ImageBackground,
-    TouchableOpacity,
-    ScrollView,
-} from 'react-native'
-import { icons, images, colors, fontSizes } from '../constants'
-import { Home } from '../Screens'
-import { NavigationContainer } from '@react-navigation/native'
-import { createNativeStackNavigator } from '@react-navigation/native-stack'
+    Settings,
+    ProductGridView,
+    Foodlist,
+    Profile,
+} from '../Screens'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
-import { StackRouter } from 'react-navigation'
+import { fontSizes, colors } from '../constants'
+import Icon from 'react-native-vector-icons/FontAwesome5'
+import 'react-native-gesture-handler'
+import { View } from 'react-native'
 
 const Tab = createBottomTabNavigator()
-
-function UITab(pros) {
-    return <Tab.Navigator initialRouteName='Home'
-        screenOptions={{
-            headerShown: false
-        }}>
-        <Tab.Screen name={Home} component={Home} />
+const screenOptions = ({ route }) => ({
+    headerShown: false,
+    tabBarActiveTinColor: 'white',
+    tabBarInactiveTinColor: colors.inactive,
+    tabBarActiveBackgroundColor: colors.primary,
+    tabBarInactiveBackgroundColor: colors.primary,
+    tabBarBackground: () => (
+        <View style={{ backgroundColor: colors.primary, flex: 1 }}></View>
+    ),
+    tabBarIcon: ({ focused, color, size }) => {
+        return <Icon
+            style={{
+                paddingTop: 5
+            }}
+            name={route.name == "ProductGridView" ? "align-center>" :
+                (route.name == "Foodlist" ? "accusoft" :
+                    (route.name == "Settings" ? "cogs" :
+                        (route.name == "Profile" ? "user" :
+                            (route.name == "Chat" ? "comment-dots" : "")
+                        )
+                    )
+                )
+            }
+            size={20}
+            color={focused ? 'white' : colors.inactive} />
+    }
+})
+function UITab(props) {
+    return <Tab.Navigator screenOptions={screenOptions} >
+        <Tab.Screen
+            name={"Products"}
+            component={ProductGridView}
+            options={{
+                tabBarLable: 'products',
+                tabBarLabelStyle: {
+                    fontSize: fontSizes.h6
+                }
+            }}
+        />
+        <Tab.Screen
+            name={"Foodlist"}
+            component={Foodlist}
+            options={{
+                tabBarLabel: 'Foods',
+                tabBarLabelStyle: {
+                    fontSize: fontSizes.h6
+                }
+            }} />
+        <Tab.Screen
+            name={"Settings"}
+            component={Settings}
+            options={{
+                tabBarLable: 'Settings',
+                tabBarLabelStyle: {
+                    fontSize: fontSizes.h6
+                }
+            }}
+        />
+        <Tab.Screen
+            name={"Profile"}
+            component={Profile}
+            options={{
+                tabBarLable: 'Profile',
+                tabBarLabelStyle: {
+                    fontSize: fontSizes.h6
+                }
+            }}
+        />
+        <Tab.Screen
+            name={"Chat"}
+            component={Chat}
+            options={{
+                tabBarLable: 'products',
+                tabBarLabelStyle: {
+                    fontSize: fontSizes.h6
+                }
+            }}
+        />
     </Tab.Navigator>
-
-
 }
-
-export default UITab;
+export default UITab

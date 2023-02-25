@@ -26,7 +26,6 @@ function App(props) {
             }}>
             <Stack.Screen name={"Welcome"} component={Welcome} />
             <Stack.Screen name={"Login"} component={Login} />
-            <Stack.Screen name={"Home"} component={Home} />
             <Stack.Screen name={"Register"} component={Register} />
             <Stack.Screen name={"UITab"} component={UITab} />
         </Stack.Navigator>
