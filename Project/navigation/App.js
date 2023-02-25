@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-
+import React, { Component, useState } from 'react'
 import {
     Image,
     Text,
@@ -7,13 +6,29 @@ import {
     ImageBackground,
     TouchableOpacity,
     ScrollView,
-    FlatList
 } from 'react-native'
-import { icons, images, colors } from '../constants/index.js'
-import { UIButton } from '../components'
-import Icon from 'react-native-vector-icons/dist/FontAwesome'
-import { Avatar, TextInput } from 'react-native-paper';
+import { icons, images, colors, fontSizes } from '../constants'
+import { NavigationContainer } from '@react-navigation/native'
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+import { StackRouter } from 'react-navigation'
+import { Welcome, Login, Home } from '../Screens'
+import UITab from './UITab'
 
-function App(pros){
-    
+
+const Stack = createNativeStackNavigator()
+// the heck
+function App(props) {
+    return <NavigationContainer>
+        <Stack.Navigator initialRouteName='Welcome'
+            screenOptions={{
+                headerShown: false
+            }}>
+            <Stack.Screen name={"Welcome"} component={Welcome} />
+            <Stack.Screen name={"Login"} component={Login} />
+            <Stack.Screen name={"Home"} component={Home} />
+            <Stack.Screen name={"UITab"} component={UITab} />
+        </Stack.Navigator>
+    </NavigationContainer >
 }
+export default App

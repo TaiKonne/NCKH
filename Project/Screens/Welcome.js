@@ -32,6 +32,9 @@ function Welcome(props) {
             isSelected: false,
         }
     ])
+
+    const { navigation, route } = props
+    const { navigate, goBack } = navigation
     return <View style={{
         backgroundColor: 'skyblue',
         flex: 100
