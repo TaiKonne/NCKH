@@ -6,7 +6,10 @@ import {
     View,
     ImageBackground,
     TouchableOpacity,
-    ScrollView, StyleSheet
+    ScrollView,
+    StyleSheet,
+    Button,
+    Share,
 } from 'react-native'
 
 import Icon from 'react-native-vector-icons/dist/FontAwesome'
@@ -17,8 +20,9 @@ import Constants_Home from './Constants_Home.js'
 
 
 function Homeid(props) {
-    let { name, avatar, status, video, ima, interact } = props.user; //destructuring
+    let { name, avatar, status, video, ima, interact } = props.user;
     let ID = props.user
+    let INTERACT = props.user.interact
     return (
         <View>
             <View style={{  // status
@@ -76,12 +80,107 @@ function Homeid(props) {
                 <View style={{ // cmt and like
                     borderWidth: 1,
                     borderColor: 'green',
-                    height: 70
+                    height: 80
                 }}>
+                    <View style={{  // trạng thái tổng quan like, cmt, share
+                        height: '50%',
+                        flexDirection: 'row',
+                    }}>
+                        <View
+                            style={{
+                                width: '33.3%',
+                                flexDirection: 'row',
+                                // justifyContent: 'center',
+                                alignItems: 'center',
 
+                            }}>
+                            <Icon name={'heart'} />
+                            <Text>{INTERACT.likes}</Text>
+                        </View>
+                        <View
+                            style={{
+                                width: '33.3%',
+                                flexDirection: 'row',
+                                justifyContent: 'center',
+                                alignItems: 'center',
+
+                            }}>
+                            <Icon name={'comment'} />
+                            <Text>{INTERACT.cmt}</Text>
+                        </View>
+                        <View
+                            style={{
+                                width: '33.3%',
+                                flexDirection: 'row',
+                                justifyContent: 'center',
+                                alignItems: 'center',
+
+                            }}>
+                            <Text>Share</Text>
+                        </View>
+                    </View>
+
+                    {/* ----------------------- */}
+
+                    <View style={{  // trạng thái detail
+                        flexDirection: 'row',
+                        borderColor: 'grey',
+                        borderTopWidth: 0.5,
+                        height: '50%',
+                    }}>
+                        <TouchableOpacity
+                            style={{
+                                width: '33.3%',
+                                flexDirection: 'row',
+                                justifyContent: 'center',
+                                alignItems: 'center',
+                                borderwidth: 1,
+
+                            }}>
+                            <Icon name={'thumbs-up'}
+                                size={16}
+                                style={{
+                                    marginRight: 3,
+                                }} />
+                            <Text style={{
+                                fontSize: 16,
+                            }} >
+                                Like
+                            </Text>
+                        </TouchableOpacity >
+                        <View
+                            style={{
+                                width: '33.3%',
+                                flexDirection: 'row',
+                                justifyContent: 'center',
+                                alignItems: 'center',
+                            }}>
+                            <Icon name={'comment'} size={16} style={{
+                                marginRight: 3,
+                            }} />
+                            <Text style={{
+                                fontSize: 16,
+                            }} >
+                                Comment</Text>
+                        </View>
+                        <View
+                            style={{
+                                width: '33.3%',
+                                flexDirection: 'row',
+                                justifyContent: 'center',
+                                alignItems: 'center',
+                            }}>
+                            <Icon name={'share'} size={16} style={{
+                                marginRight: 3,
+                            }} />
+                            <Text style={{
+                                fontSize: 16,
+                            }} >Share</Text>
+                        </View>
+                    </View>
                 </View>
             </View>
-        </View>
+        </View >
     )
 
 };

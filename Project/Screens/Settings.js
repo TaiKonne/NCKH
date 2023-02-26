@@ -5,19 +5,19 @@ import {
     TouchableOpacity,
     Image,
     FlatList,
-    ScrollView,
+    ScrollView , 
     Switch,
     toggleSwitch,
 } from 'react-native'
 
 import { images, colors, icons, fontSizes } from '../constants'
-import Icon from 'react-native-vector-icons/dist/FontAwesome'
+import Icon from 'react-native-vector-icons/dist/FontAwesome5'
 import { UIHeader } from '../components'
 function Settings(props) {
 
-    const [isEnabledLockApp, setEnabledLockApp] = useState(true)
-    const [isEnabledChangePassword, setEnabledChangePassword] = useState(true)
-    const [isEnabledFingerprint, setEnabledFingerprint] = useState(true)
+    const[isEnabledLockApp,setEnabledLockApp] = useState(true)
+    const[isEnabledChangePassword,setEnabledChangePassword] = useState(true)
+    const[isEnabledFingerprint,setEnabledFingerprint] = useState(true)
     return <View style={{
         flex: 1,
         backgroundColor: 'white'
@@ -35,7 +35,7 @@ function Settings(props) {
                     fontSize: fontSizes.h4,
                     color: 'red',
                     paddingStart: 10,
-                    fontWeight: 'bold'
+                    fontWeight : 'bold'
                 }}>Common</Text>
             </View>
             <View style={{
@@ -45,8 +45,8 @@ function Settings(props) {
             }} >
                 <Icon
                     style={{ marginStart: 10 }}
-                    name='globe'
-                    size={20}
+                    name='language'
+                    size={18}
                     color={'black'}
                 />
                 <Text style={{
@@ -65,7 +65,7 @@ function Settings(props) {
                 <Icon
                     style={{ marginEnd: 10 }}
                     name='chevron-right'
-                    size={20}
+                    size={18}
                     color={colors.inactive}
                 />
             </View>
@@ -77,7 +77,7 @@ function Settings(props) {
                 <Icon
                     style={{ marginStart: 10 }}
                     name='cloud'
-                    size={20}
+                    size={18}
                     color={'black'}
                 />
                 <Text style={{
@@ -96,7 +96,97 @@ function Settings(props) {
                 <Icon
                     style={{ marginEnd: 10 }}
                     name='chevron-right'
-                    size={20}
+                    size={18}
+                    color={colors.inactive}
+                />
+            </View>
+            {/* Information */}
+            <View style={{
+                height: 40,
+                backgroundColor: 'rgba(0,0,0,0.2)',
+                opacity: 0.3,
+                justifyContent: 'center',
+            }} >
+                <Text style={{
+                    color: 'black',
+                    fontSize: fontSizes.h4,
+                    color: 'red',
+                    paddingStart: 10,
+                    fontWeight : 'bold'
+                }}>Information</Text>
+            </View>
+            <View style={{
+                flexDirection: 'row',
+                paddingVertical: 10,
+                alignItems: 'center'
+            }} >
+                <Icon
+                    style={{ marginStart: 10 }}
+                    name='calendar-day'
+                    size={18}
+                    color={'black'}
+                />
+                <Text style={{
+                    color: 'black',
+                    fontSize: fontSizes.h6,
+                    paddingStart: 10,
+
+                }}>Date Of Birth</Text>
+                <View style={{ flex: 1 }} ></View>
+                <Icon
+                    style={{ marginEnd: 10 }}
+                    name='chevron-right'
+                    size={18}
+                    color={colors.inactive}
+                />
+            </View>
+            <View style={{
+                flexDirection: 'row',
+                paddingVertical: 10,
+                alignItems: 'center'
+            }} >
+                <Icon
+                    style={{ marginStart: 10 }}
+                    name='venus-mars'
+                    size={18}
+                    color={'black'}
+                />
+                <Text style={{
+                    color: 'black',
+                    fontSize: fontSizes.h6,
+                    paddingStart: 10,
+
+                }}>Gender</Text>
+                <View style={{ flex: 1 }} ></View>
+                <Icon
+                    style={{ marginEnd: 10 }}
+                    name='chevron-right'
+                    size={18}
+                    color={colors.inactive}
+                />
+            </View>
+            <View style={{
+                flexDirection: 'row',
+                paddingVertical: 10,
+                alignItems: 'center'
+            }} >
+                <Icon
+                    style={{ marginStart: 10 }}
+                    name='globe'
+                    size={18}
+                    color={'black'}
+                />
+                <Text style={{
+                    color: 'black',
+                    fontSize: fontSizes.h6,
+                    paddingStart: 10,
+
+                }}>Address</Text>
+                <View style={{ flex: 1 }} ></View>
+                <Icon
+                    style={{ marginEnd: 10 }}
+                    name='chevron-right'
+                    size={18}
                     color={colors.inactive}
                 />
             </View>
@@ -112,19 +202,18 @@ function Settings(props) {
                     fontSize: fontSizes.h4,
                     color: 'red',
                     paddingStart: 10,
-                    fontWeight: 'bold'
-                }}>Account</Text>
+                    fontWeight : 'bold'
+                }}>Contact</Text>
             </View>
             <View style={{
                 flexDirection: 'row',
                 paddingVertical: 10,
                 alignItems: 'center'
             }} >
-
                 <Icon
                     style={{ marginStart: 10 }}
                     name='phone'
-                    size={20}
+                    size={18}
                     color={'black'}
                 />
                 <Text style={{
@@ -137,7 +226,7 @@ function Settings(props) {
                 <Icon
                     style={{ marginEnd: 10 }}
                     name='chevron-right'
-                    size={20}
+                    size={18}
                     color={colors.inactive}
                 />
             </View>
@@ -149,7 +238,7 @@ function Settings(props) {
                 <Icon
                     style={{ marginStart: 10 }}
                     name='envelope'
-                    size={20}
+                    size={18}
                     color={'black'}
                 />
                 <Text style={{
@@ -160,11 +249,11 @@ function Settings(props) {
                 }}>Email</Text>
                 <View style={{ flex: 1 }} ></View>
                 <Icon
-                    style={{
-                        paddingEnd: 10
+                    style={{ 
+                        paddingEnd: 10 
                     }}
                     name='chevron-right'
-                    size={20}
+                    size={18}
                     color={colors.inactive}
                 />
             </View>
@@ -177,8 +266,8 @@ function Settings(props) {
 
                 <Icon
                     style={{ marginStart: 10 }}
-                    name='arrow-right-from-bracket'
-                    size={20}
+                    name='arrow-left'
+                    size={18}
                     color={'black'}
                 />
                 <Text style={{
@@ -191,7 +280,7 @@ function Settings(props) {
                 <Icon
                     style={{ marginEnd: 10 }}
                     name='chevron-right'
-                    size={20}
+                    ssize={18}
                     color={colors.inactive}
                 />
             </View>
@@ -206,7 +295,7 @@ function Settings(props) {
                     fontSize: fontSizes.h4,
                     color: 'red',
                     paddingStart: 10,
-                    fontWeight: 'bold'
+                    fontWeight : 'bold'
                 }}>Security</Text>
             </View>
             <View style={{
@@ -218,7 +307,7 @@ function Settings(props) {
                 <Icon
                     style={{ marginStart: 10 }}
                     name='door-closed'
-                    size={20}
+                    size={18}
                     color={'black'}
                 />
                 <Text style={{
@@ -229,13 +318,13 @@ function Settings(props) {
                 }}>Lock out in background</Text>
                 <View style={{ flex: 1 }} ></View>
                 <Switch
-                    trackColor={{ false: colors.inactive, true: colors.primary }}
-                    thumbColor={isEnabledLockApp ? colors.primary : colors.inactive}
-                    onValueChange={() => {
+                    trackColor={{false : colors.inactive, true : colors.primary}} 
+                    thumbColor={isEnabledLockApp ? colors.primary: colors.inactive}    
+                    onValueChange={() =>{
                         setEnabledLockApp(!isEnabledLockApp)
                     }}
-                    value={isEnabledLockApp}
-                    style={{
+                    value = {isEnabledLockApp}
+                    style ={{
                         paddingEnd: 10
                     }}
                 />
@@ -249,7 +338,7 @@ function Settings(props) {
                 <Icon
                     style={{ marginStart: 10 }}
                     name='key'
-                    size={20}
+                    size={18}
                     color={'black'}
                 />
                 <Text style={{
@@ -260,13 +349,13 @@ function Settings(props) {
                 }}>Use Fingerprint</Text>
                 <View style={{ flex: 1 }} ></View>
                 <Switch
-                    trackColor={{ false: colors.inactive, true: colors.primary }}
-                    thumbColor={isEnabledFingerprint ? colors.primary : colors.inactive}
-                    onValueChange={() => {
+                    trackColor={{false : colors.inactive, true :colors.primary}} 
+                    thumbColor={isEnabledFingerprint ? colors.primary: colors.inactive}    
+                    onValueChange={() =>{
                         setEnabledFingerprint(!isEnabledFingerprint)
                     }}
-                    value={isEnabledFingerprint}
-                    style={{
+                    value = {isEnabledFingerprint}
+                    style ={{
                         paddingEnd: 10
                     }}
                 />
@@ -280,7 +369,7 @@ function Settings(props) {
                 <Icon
                     style={{ marginStart: 10 }}
                     name='lock'
-                    size={20}
+                    size={18}
                     color={'black'}
                 />
                 <Text style={{
@@ -291,13 +380,13 @@ function Settings(props) {
                 }}>Changed Password</Text>
                 <View style={{ flex: 1 }} ></View>
                 <Switch
-                    trackColor={{ false: colors.inactive, true: colors.primary }}
-                    thumbColor={isEnabledChangePassword ? colors.primary : colors.inactive}
-                    onValueChange={() => {
+                    trackColor={{false : colors.inactive, true : colors.primary}} 
+                    thumbColor={isEnabledChangePassword ? colors.primary: colors.inactive}    
+                    onValueChange={() =>{
                         setEnabledChangePassword(!isEnabledChangePassword)
                     }}
-                    value={isEnabledChangePassword}
-                    style={{
+                    value = {isEnabledChangePassword}
+                    style ={{
                         paddingEnd: 10
                     }}
                 />
@@ -313,7 +402,7 @@ function Settings(props) {
                     fontSize: fontSizes.h4,
                     color: 'red',
                     paddingStart: 10,
-                    fontWeight: 'bold'
+                    fontWeight : 'bold'
                 }}>Misc</Text>
             </View>
             <View style={{
@@ -324,7 +413,7 @@ function Settings(props) {
                 <Icon
                     style={{ marginStart: 10 }}
                     name='file'
-                    size={20}
+                    size={18}
                     color={'black'}
                 />
                 <Text style={{
@@ -337,7 +426,7 @@ function Settings(props) {
                 <Icon
                     style={{ marginEnd: 10 }}
                     name='chevron-right'
-                    size={20}
+                    size={18}
                     color={colors.inactive}
                 />
             </View>
@@ -349,7 +438,7 @@ function Settings(props) {
                 <Icon
                     style={{ marginStart: 10 }}
                     name='passport'
-                    size={20}
+                    size={18}
                     color={'black'}
                 />
                 <Text style={{
@@ -362,7 +451,7 @@ function Settings(props) {
                 <Icon
                     style={{ marginEnd: 10 }}
                     name='chevron-right'
-                    size={20}
+                    size={18}
                     color={colors.inactive}
                 />
             </View>

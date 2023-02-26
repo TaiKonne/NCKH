@@ -30,7 +30,13 @@ function Home(props) {
                 status: 'Tôi có ước muốn đơn giản là được ngủ cả ngày.',
                 video: '',
                 ima: 'https://tophinhanhdep.com/wp-content/uploads/2021/10/Adventure-Time-Wallpapers.jpg',
-                interact: 'like, cmt, share',
+                interact:
+                {
+                    likes: '12',
+                    cmt: '1',
+                    share: '',
+                }
+
             },
             {
                 name: 'Quốc Dũng',
@@ -38,7 +44,12 @@ function Home(props) {
                 status: 'Trời ơi, hôm nay trời đẹp thế nhỉ',
                 video: '',
                 ima: 'https://images.baodantoc.vn/uploads/2022/Th%C3%A1ng%205/Ng%C3%A0y_26/Anh/untitled%20folder/282030013_551948049833120_1274640577714723578_n.jpg',
-                interact: 'like, cmt, share',
+                interact:
+                {
+                    likes: '14',
+                    cmt: '11',
+                    share: '',
+                }
             },
             {
                 name: 'Minh Thắng NO.1 coder',
@@ -46,7 +57,12 @@ function Home(props) {
                 status: 'Trời ơi, hôm nay trời đẹp thế nhỉ',
                 video: '',
                 ima: 'https://scontent.fsgn13-4.fna.fbcdn.net/v/t39.30808-6/309156219_472048304944448_1140633890876958604_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=63DPgZhrdBsAX9qGngg&_nc_ht=scontent.fsgn13-4.fna&oh=00_AfCRe5m757qmWmd9d1s0wvM2goo-ULRYrKp1DEHiNirsfg&oe=63F90DB6',
-                interact: 'like, cmt, share',
+                interact:
+                {
+                    likes: '12',
+                    cmt: '1',
+                    share: '',
+                }
             },
             {
                 name: 'Kiệt Lee siuuu',
@@ -54,7 +70,12 @@ function Home(props) {
                 status: 'Trời ơi, hôm nay trời đẹp thế nhỉ',
                 video: 'https://drive.google.com/uc?export=download&id=1d_A9I2OT9vyppWyPEI81NVLcQgxwd8Yo',
                 ima: '',
-                interact: 'like, cmt, share',
+                interact:
+                {
+                    likes: '12',
+                    cmt: '1',
+                    share: '',
+                }
             },
             {
                 name: 'Anh Minh',
@@ -62,7 +83,12 @@ function Home(props) {
                 status: 'Tôi nhớ những ngày được đi chơi vui vẻ',
                 video: '',
                 ima: '',
-                interact: 'like, cmt, share',
+                interact:
+                {
+                    likes: '12',
+                    cmt: 'Cho mượt 5 chịu',
+                    share: '',
+                }
             },
             {
                 name: 'Anh Trung',
@@ -70,7 +96,12 @@ function Home(props) {
                 status: 'Kiếm việc làm tỷ đô không khó, chỉ cần tìm đến tôi, bạn sẽ có tất cả',
                 video: '',
                 ima: '',
-                interact: 'like, cmt, share'
+                interact:
+                {
+                    likes: '1',
+                    cmt: 'Cho mượt 5 chịu',
+                    share: '',
+                }
             }
         ]
     )

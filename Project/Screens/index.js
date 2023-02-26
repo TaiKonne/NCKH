@@ -9,6 +9,8 @@ import Settings from "./Settings"
 import Profile from "./Profile"
 import Register from "./Register"
 import Messenger from "./Messenger/Messenger"
+import ListFriend from "./ListFriend/ListFriend"
+import PicStorage from "./PicStorage/PicStorage"
 export {
     Welcome,
     Login,
@@ -21,4 +23,6 @@ export {
     Settings,
     Profile,
     Messenger,
+    ListFriend,
+    PicStorage
 }

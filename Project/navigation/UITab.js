@@ -1,8 +1,6 @@
 import * as React from 'react'
 import {
     Settings,
-    ProductGridView,
-    Foodlist,
     Profile,
     Chat,
     Home

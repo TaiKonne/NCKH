@@ -1,6 +1,6 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import {
-    Text, 
+    Text,
     View,
     Image,
     ImageBackground,
@@ -10,7 +10,7 @@ import {
     Keyboard,
     Dimensions,
 } from 'react-native'
-import {images, colors, icons, fontSizes} from '../../constants'
+import { images, colors, icons, fontSizes } from '../../constants'
 import Icon from 'react-native-vector-icons/FontAwesome5'
 import { screenWidth } from '../../utilies/Device';
 
@@ -40,9 +40,9 @@ function MessengerItem(props) {
                 height: 40,
                 marginRight: 15,
                 marginStart: 10
-                }}/>}
+            }} />}
         <View style={{
-            width: screenWidth  * 0.7,
+            width: screenWidth * 0.7,
             flexDirection: 'row',
         }}>
             <View>
@@ -63,10 +63,10 @@ function MessengerItem(props) {
             onPress={onPress}
             style={{
                 marginTop: 5,
-                flexDirection: 'row',  
-                justifyContent: 'flex-end',   
-                alignItems: 'center',           
-            }}>            
+                flexDirection: 'row',
+                justifyContent: 'flex-end',
+                alignItems: 'center',
+            }}>
             <View style={{
                 width: screenWidth * 0.7,
                 flexDirection: 'row',
@@ -83,7 +83,7 @@ function MessengerItem(props) {
                         borderRadius: 10,
                     }}>{messenger}</Text>
                 </View>
-                
+
             </View>
             {showUrl == true ? <Image
                 style={{
@@ -101,7 +101,7 @@ function MessengerItem(props) {
                     height: 40,
                     marginRight: 15,
                     marginStart: 10
-                    }}/>}
+                }} />}
         </TouchableOpacity>)
 }
 export default MessengerItem

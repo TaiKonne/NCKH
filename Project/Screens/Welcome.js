@@ -138,7 +138,7 @@ function Welcome(props) {
             }}>
                 <UIButton
                     title={'Next'.toUpperCase()}
-                    onPress={()=>{
+                    onPress={() => {
                         navigate('Login')
                     }}
                 />
