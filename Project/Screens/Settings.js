@@ -13,13 +13,11 @@ import {
 import { images, colors, icons, fontSizes } from '../constants'
 import Icon from 'react-native-vector-icons/dist/FontAwesome'
 import { UIHeader } from '../components'
-
 function Settings(props) {
 
     const [isEnabledLockApp, setEnabledLockApp] = useState(true)
     const [isEnabledChangePassword, setEnabledChangePassword] = useState(true)
     const [isEnabledFingerprint, setEnabledFingerprint] = useState(true)
-
     return <View style={{
         flex: 1,
         backgroundColor: 'white'

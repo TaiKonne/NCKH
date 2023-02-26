@@ -19,12 +19,11 @@ import VideoPlayer from 'react-native-video-controls'
 const vii = require('../front_end/anh_Minh_cau_nguyen.mp4')
 function Test_video(props) {
     return (<View style={styles.container}>
-        <Video source={{ uri: 'https://www.w3schools.com/html/mov_bbb.mp4' }}
+        <Video source={vii}
 
             style={styles.backgroundVideo}
             controls={true}
             repeat={true}
-            posterResizeMode="none"
         //https://www.w3schools.com/html/mov_bbb.mp4
         />
     </View>
@@ -32,12 +31,10 @@ function Test_video(props) {
 }
 var styles = StyleSheet.create({
     container: {
-        backgroundColor: 'red',
-        // flex: 1,
+        backgroundColor: 'white',
+        flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        width: 'auto',
-        height: 400,
     },
     backgroundVideo: {
         position: 'absolute',
@@ -45,7 +42,6 @@ var styles = StyleSheet.create({
         left: 0,
         bottom: 0,
         right: 0,
-
     },
 });
 export default Test_video;

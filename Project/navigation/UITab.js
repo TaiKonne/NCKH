@@ -4,6 +4,8 @@ import {
     ProductGridView,
     Foodlist,
     Profile,
+    Chat,
+    Home
 } from '../Screens'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { fontSizes, colors } from '../constants'
@@ -27,7 +29,7 @@ const screenOptions = ({ route }) => ({
                 paddingTop: 5
             }}
             name={route.name == "ProductGridView" ? "align-center>" :
-                (route.name == "Foodlist" ? "accusoft" :
+                (route.name == "Home" ? "newspaper" :
                     (route.name == "Settings" ? "cogs" :
                         (route.name == "Profile" ? "user" :
                             (route.name == "Chat" ? "comment-dots" : "")
@@ -40,8 +42,10 @@ const screenOptions = ({ route }) => ({
     }
 })
 function UITab(props) {
-    return <Tab.Navigator screenOptions={screenOptions} >
-        <Tab.Screen
+    return <Tab.Navigator screenOptions={screenOptions}
+        style={{ flexDirection: 'row', }}
+    >
+        {/* <Tab.Screen
             name={"Products"}
             component={ProductGridView}
             options={{
@@ -50,26 +54,16 @@ function UITab(props) {
                     fontSize: fontSizes.h6
                 }
             }}
-        />
+        /> */}
         <Tab.Screen
-            name={"Foodlist"}
-            component={Foodlist}
+            name={"Home"}
+            component={Home}
             options={{
-                tabBarLabel: 'Foods',
+                tabBarLabel: 'Home',
                 tabBarLabelStyle: {
                     fontSize: fontSizes.h6
                 }
             }} />
-        <Tab.Screen
-            name={"Settings"}
-            component={Settings}
-            options={{
-                tabBarLable: 'Settings',
-                tabBarLabelStyle: {
-                    fontSize: fontSizes.h6
-                }
-            }}
-        />
         <Tab.Screen
             name={"Profile"}
             component={Profile}
@@ -85,6 +79,16 @@ function UITab(props) {
             component={Chat}
             options={{
                 tabBarLable: 'products',
+                tabBarLabelStyle: {
+                    fontSize: fontSizes.h6
+                }
+            }}
+        />
+        <Tab.Screen
+            name={"Settings"}
+            component={Settings}
+            options={{
+                tabBarLable: 'Settings',
                 tabBarLabelStyle: {
                     fontSize: fontSizes.h6
                 }
