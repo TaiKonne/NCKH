@@ -41,4 +41,7 @@ export {
     getDatabase,
     firebaseDatabaseRef,
     firebaseSet,
+    child,
+    get,
+    onValue,
 }
