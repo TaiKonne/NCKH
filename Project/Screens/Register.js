@@ -1,58 +1,62 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import {
-    Text, 
+    Text,
     View,
     Image,
     ImageBackground,
     TouchableOpacity,
     TextInput,
     KeyboardAvoidingView,
-    Keyboard
+    Keyboard,
 } from 'react-native'
-
-import {images, colors, icons, fontSizes} from '../constants'
+import { images, colors, icons, fontSizes } from '../constants'
 import Icon from 'react-native-vector-icons/FontAwesome5'
-import {isValidEmail, isValidPassword} from '../utilies/Validations'
-// import {    
-//     firebaseDatabase,
-//     auth,
-// } from '../Firebase/firebase'
+import { isValidEmail, isValidPassword } from '../utilies/Validations'
+import {
+    auth,
+    onAuthStateChanged,
+    firebaseDatabaseRef,
+    firebaseSet,
+    firebaseDatabase,
+    createUserWithEmailAndPassword,
+    sendEmailVerification,
+} from '../Firebase/firebase'
 
 function Register(props) {
+
     const [keyboardIsShown, setKeyboardIsShown] = useState(false)
     //states for validating
     const [errorEmail, setErrorEmail] = useState('')
     const [errorPassword, setErrorPassword] = useState('')
     //states to store email/password
-    const [email, setEmail] = useState('baluu8njdf@gmail.com')
-    const [password, setPassword] = useState('123456Abc')
-    const [retypePassword, setRetypePassword] = useState('123456Abc')
+    const [email, setEmail] = useState('taichuotchuoi@gmail.com')
+    const [password, setPassword] = useState('nguyentantai')
+    const [retypePassword, setRetypePassword] = useState('nguyentantai')
     const isValidationOK = () => email.length > 0 && password.length > 0
-                            && isValidEmail(email) == true
-                            && isValidPassword(password) == true
-                            && password == retypePassword
-
-    useEffect(()=>{
+        && isValidEmail(email) == true
+        && isValidPassword(password) == true
+        && password == retypePassword
+    useEffect(() => {
         //componentDidMount        
-        Keyboard.addListener('keyboardDidShow', () => {            
+        Keyboard.addListener('keyboardDidShow', () => {
             setKeyboardIsShown(true)
         })
-        Keyboard.addListener('keyboardDidHide', () => {            
+        Keyboard.addListener('keyboardDidHide', () => {
             setKeyboardIsShown(false)
-        })           
+        })
     })
     //navigation
-    const {navigation, route} = props
+    const { navigation, route } = props
     //functions of navigate to/back
-    const {navigate, goBack} = navigation
-    return <View     
-    style={{
-        flex: 100,
-        backgroundColor: colors.primary
-    }}>
+    const { navigate, goBack } = navigation
+    return <View
+        style={{
+            flex: 100,
+            backgroundColor: colors.primary
+        }}>
         <View style={{
             flex: 25,
-            flexDirection: 'row',            
+            flexDirection: 'row',
             justifyContent: 'space-around',
             alignItems: 'center'
         }}>
@@ -63,7 +67,7 @@ function Register(props) {
                 width: '50%'
             }}>Already have an Account?</Text>
             <Image
-                tintColor = {'white'}
+                tintColor={'white'}
                 source={
                     images.computer
                 } style={{
@@ -87,7 +91,7 @@ function Register(props) {
                     color: colors.primary
                 }}>Email:</Text>
                 <TextInput
-                    onChangeText={(text)=>{
+                    onChangeText={(text) => {
                         /*
                        if(isValidEmail(text) == false) {
                            setErrorEmail('Email not in correct format')
@@ -95,9 +99,9 @@ function Register(props) {
                            setErrorEmail('')
                        }
                        */
-                       setErrorEmail(isValidEmail(text) == true ? 
-                                    '' : 'Email not in correct format')
-                       setEmail(text)    
+                        setErrorEmail(isValidEmail(text) == true ?
+                            '' : 'Email not in correct format')
+                        setEmail(text)
                     }}
                     style={{
                         color: 'black'
@@ -106,18 +110,19 @@ function Register(props) {
                     value={email}
                     placeholderTextColor={colors.placeholder}
                 />
-                <View style={{height: 1, 
-                    backgroundColor: colors.primary, 
-                    width: '100%',                    
+                <View style={{
+                    height: 1,
+                    backgroundColor: colors.primary,
+                    width: '100%',
                     marginHorizontal: 15,
                     marginBottom: 5,
                     alignSelf: 'center'
                 }} />
                 <Text style={{
-                    color: 'red', 
+                    color: 'red',
                     fontSize: fontSizes.h6,
                     marginBottom: 10,
-                    }}>{errorEmail}</Text>
+                }}>{errorEmail}</Text>
             </View>
             <View style={{
                 marginHorizontal: 15
@@ -127,10 +132,10 @@ function Register(props) {
                     color: colors.primary
                 }}>Password:</Text>
                 <TextInput
-                    onChangeText={(text)=>{
-                        setErrorPassword(isValidPassword(text) == true ? 
-                                    '' : 'Password must be at least 3 characters')
-                        setPassword(text)    
+                    onChangeText={(text) => {
+                        setErrorPassword(isValidPassword(text) == true ?
+                            '' : 'Mật khẩu phải lớn hơn hoặc bằng 8 ký tự')
+                        setPassword(text)
                     }}
                     style={{
                         color: 'black'
@@ -140,18 +145,19 @@ function Register(props) {
                     placeholder='Enter your password'
                     placeholderTextColor={colors.placeholder}
                 />
-                <View style={{height: 1, 
-                    backgroundColor: colors.primary, 
+                <View style={{
+                    height: 1,
+                    backgroundColor: colors.primary,
                     width: '100%',
                     marginBottom: 10,
                     marginHorizontal: 15,
                     alignSelf: 'center'
                 }} />
                 <Text style={{
-                    color: 'red', 
+                    color: 'red',
                     fontSize: fontSizes.h6,
-                    marginBottom: 15,                    
-                    }}>{errorPassword}</Text>
+                    marginBottom: 15,
+                }}>{errorPassword}</Text>
             </View>
             <View style={{
                 marginHorizontal: 15,
@@ -161,10 +167,10 @@ function Register(props) {
                     color: colors.primary
                 }}>Retype password:</Text>
                 <TextInput
-                    onChangeText={(text)=>{
-                        setErrorPassword(isValidPassword(text) == true ? 
-                                    '' : 'Password must be at least 3 characters')
-                        setRetypePassword(text)                                    
+                    onChangeText={(text) => {
+                        setErrorPassword(isValidPassword(text) == true ?
+                            '' : 'Mật khẩu phải dài hơn hoặc bằng 8 ký tự')
+                        setRetypePassword(text)
                     }}
                     style={{
                         color: 'black'
@@ -174,41 +180,58 @@ function Register(props) {
                     placeholder='Re-Enter your password'
                     placeholderTextColor={colors.placeholder}
                 />
-                <View style={{height: 1, 
-                    backgroundColor: colors.primary, 
+                <View style={{
+                    height: 1,
+                    backgroundColor: colors.primary,
                     width: '100%',
                     marginBottom: 10,
                     marginHorizontal: 15,
                     alignSelf: 'center'
                 }} />
                 <Text style={{
-                    color: 'red', 
+                    color: 'red',
                     fontSize: fontSizes.h6,
-                    marginBottom: 5,                    
-                    }}>{errorPassword}</Text>
+                    marginBottom: 5,
+                }}>{errorPassword}</Text>
             </View>
             <TouchableOpacity
-                disabled = {isValidationOK() == false}
+                disabled={isValidationOK() == false}
                 onPress={() => {
-                    alert(`Email = ${email}, password = ${password}`)
-                    goBack()
+                    // alert(`Email = ${email}, password = ${password}`)
+                    createUserWithEmailAndPassword(auth, email, password) // lấy thông tin từ auth để tạo account
+                        .then((userCredential) => {
+                            const user = userCredential.user // thành công thì tạo
+                            sendEmailVerification(user).then(() => {
+                                console.log('Đã gửi xác nhận đến mail, xin hãy kiểm tra.')
+                            })
+                            firebaseSet(firebaseDatabaseRef( // tạo ra user mới và lưu các thông tin lại
+                                firebaseDatabase,
+                                `users/${user.uid}`
+                            ), {
+                                email: user.email,
+                                emailVerified: user.emailVerified,
+                                accessToken: user.accessToken,
+                            })
+                            navigate('UITab')
+                        }).catch((error) => {
+                            alert(`Cannot signin, error: ${error.message}`) //nếu không thành công thì thông báo lỗi
+                        })
+                    // goBack()
                     // createUserWithEmailAndPassword(auth, email, password)
                     // .then((userCredential) => {                        
                     //     const user = userCredential.user
-                    //     debugger
                     //     sendEmailVerification(user).then(()=>{
                     //         console.log('Email verification sent')
                     //     })                        
                     //     navigate('UITab')    
 
                     // }).catch((error) => {
-                    //     debugger
                     //     alert(`Cannot signin, error: ${error.message}`)
                     // })
                 }}
                 style={{
-                    backgroundColor: isValidationOK() == true 
-                                        ? colors.primary: colors.inactive,
+                    backgroundColor: isValidationOK() == true
+                        ? colors.primary : colors.inactive,
                     justifyContent: 'center',
                     alignItems: 'center',
                     width: '50%',
@@ -220,19 +243,19 @@ function Register(props) {
                     fontSize: fontSizes.h5,
                     color: 'white'
                 }}>Register</Text>
-            </TouchableOpacity>  
+            </TouchableOpacity>
         </View>
-        
+
         {keyboardIsShown == false ? <View style={{
-            flex: 20,            
+            flex: 20,
         }}>
             <View style={{
                 height: 40,
-                flexDirection: 'row',   
+                flexDirection: 'row',
                 alignItems: 'center',
                 marginHorizontal: 20
             }}>
-                <View style={{height: 1, backgroundColor: 'white', flex: 1}} />
+                <View style={{ height: 1, backgroundColor: 'white', flex: 1 }} />
                 <Text style={{
                     padding: 8,
                     fontSize: fontSizes.h6,
@@ -240,21 +263,21 @@ function Register(props) {
                     alignSelf: 'center',
                     marginHorizontal: 5,
                 }}>Use other methods ?</Text>
-                <View style={{height: 1, backgroundColor: 'white', flex: 1}} />
+                <View style={{ height: 1, backgroundColor: 'white', flex: 1 }} />
             </View>
             <View style={{
                 flexDirection: 'row',
                 justifyContent: 'center'
             }}>
                 <Icon name='facebook' size={35} color={colors.facebook} />
-                <View style={{width: 15}}/>
+                <View style={{ width: 15 }} />
                 <Icon name='google' size={35} color={colors.google} />
             </View>
 
         </View> : <View style={{
-            flex: 25,            
+            flex: 25,
         }}></View>}
-    </View>    
+    </View>
 
 }
 export default Register

@@ -9,32 +9,38 @@ import {
 import { icons, images, colors } from '../constants/index.js'
 import { UIButton } from '../components'
 import Icon from 'react-native-vector-icons/dist/FontAwesome'
-
+import {
+    auth,
+    onAuthStateChanged,
+    firebaseDatabaseRef,
+    firebaseSet,
+    firebaseDatabase
+} from '../Firebase/firebase'
 function Welcome(props) {
-    // state khi thay đổi thì UI được load lại
-    // 
-
-    //like getter/setter
-    const [accountTypes, setAccountTyeps] = useState([
-        {
-            name: 'Sinh viên đã có tài khoản',
-            al: 'Đăng nhập thành công',
-            isSelected: true,
-        },
-        {
-            name: 'Sinh viên chưa có tài khoản',
-            al: 'Đăng ký tài khoản',
-            isSelected: false,
-        },
-        {
-            name: 'Quên tài khoản mật khẩu',
-            al: 'Quên mật khẩu',
-            isSelected: false,
-        }
-    ])
 
     const { navigation, route } = props
     const { navigate, goBack } = navigation
+    useEffect(() => {
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                //signed in
+                const userId = user.uid
+                // save data to firebase
+                firebaseSet(firebaseDatabaseRef(
+                    firebaseDatabase,
+                    `users/${userId}`
+                ), {
+                    email: user.email,
+                    emailVerified: user.emailVerified,
+                    accessToken: user.accessToken,
+                })
+                navigate('UITab')
+            }
+            else {
+                navigate('Welcome')
+            }
+        })
+    })
     return <View style={{
         backgroundColor: 'skyblue',
         flex: 100
@@ -71,7 +77,7 @@ function Welcome(props) {
                     <Text style={{
                         color: 'white'
                     }}>
-                        Welcome to the hell broo
+                        Welcome to the University
                     </Text>
                     <View style={{ flex: 1 }} />
                     <Icon name={"question-circle"}

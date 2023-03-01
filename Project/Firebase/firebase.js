@@ -16,6 +16,7 @@ import {
     get,
     onValue,
 } from "firebase/database"
+
 const firebaseConfig = {
     apiKey: "AIzaSyBfJ8J3hFKZsXoK33xGnzUcAz0zpopCCns",
     authDomain: "project-513d6.firebaseapp.com",
@@ -33,4 +34,11 @@ const firebaseDatabase = getDatabase()
 export {
     auth,
     firebaseDatabase,
+    createUserWithEmailAndPassword,
+    signInWithEmailAndPassword,
+    sendEmailVerification,
+    onAuthStateChanged,
+    getDatabase,
+    firebaseDatabaseRef,
+    firebaseSet,
 }

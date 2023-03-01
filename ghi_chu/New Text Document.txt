@@ -1,0 +1,6 @@
+- resize video audio img (https://github.com/ffmpegwasm/ffmpeg.wasm)
+- khung tìm user
+- khung tìm chat
+- video call realtime
+https://www.youtube.com/playlist?list=PLam6bY5NszYNR54PiY_NN7hGS858xinq-
+- react native video

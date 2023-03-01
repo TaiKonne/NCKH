@@ -4,4 +4,4 @@ export const isValidEmail = (stringEmail) => {
 }
 //2124802010067@student.tdmu.edu.vn
 //validate password
-export const isValidPassword = (stringPassword) => stringPassword.length >= 3
+export const isValidPassword = (stringPassword) => stringPassword.length >= 8

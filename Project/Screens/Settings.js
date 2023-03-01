@@ -5,19 +5,23 @@ import {
     TouchableOpacity,
     Image,
     FlatList,
-    ScrollView , 
+    ScrollView,
     Switch,
     toggleSwitch,
 } from 'react-native'
-
+import { auth, firebaseDatabaseRef, firebaseDatabase } from '../Firebase/firebase'
 import { images, colors, icons, fontSizes } from '../constants'
 import Icon from 'react-native-vector-icons/dist/FontAwesome5'
 import { UIHeader } from '../components'
+import { StackActions } from '@react-navigation/native'
 function Settings(props) {
 
-    const[isEnabledLockApp,setEnabledLockApp] = useState(true)
-    const[isEnabledChangePassword,setEnabledChangePassword] = useState(true)
-    const[isEnabledFingerprint,setEnabledFingerprint] = useState(true)
+    const [isEnabledLockApp, setEnabledLockApp] = useState(true)
+    const [isEnabledChangePassword, setEnabledChangePassword] = useState(true)
+    const [isEnabledFingerprint, setEnabledFingerprint] = useState(true)
+    const { navigation, route } = props
+    const { navigate, goBack } = navigation
+
     return <View style={{
         flex: 1,
         backgroundColor: 'white'
@@ -35,7 +39,7 @@ function Settings(props) {
                     fontSize: fontSizes.h4,
                     color: 'red',
                     paddingStart: 10,
-                    fontWeight : 'bold'
+                    fontWeight: 'bold'
                 }}>Common</Text>
             </View>
             <View style={{
@@ -112,7 +116,7 @@ function Settings(props) {
                     fontSize: fontSizes.h4,
                     color: 'red',
                     paddingStart: 10,
-                    fontWeight : 'bold'
+                    fontWeight: 'bold'
                 }}>Information</Text>
             </View>
             <View style={{
@@ -202,7 +206,7 @@ function Settings(props) {
                     fontSize: fontSizes.h4,
                     color: 'red',
                     paddingStart: 10,
-                    fontWeight : 'bold'
+                    fontWeight: 'bold'
                 }}>Contact</Text>
             </View>
             <View style={{
@@ -249,8 +253,8 @@ function Settings(props) {
                 }}>Email</Text>
                 <View style={{ flex: 1 }} ></View>
                 <Icon
-                    style={{ 
-                        paddingEnd: 10 
+                    style={{
+                        paddingEnd: 10
                     }}
                     name='chevron-right'
                     size={18}
@@ -258,11 +262,15 @@ function Settings(props) {
                 />
             </View>
 
-            <View style={{
+            <TouchableOpacity style={{
                 flexDirection: 'row',
                 paddingVertical: 10,
                 alignItems: 'center'
-            }} >
+            }} onPress={() => {
+                auth.signOut()
+                navigate('Welcome')
+                // navigation.dispatch(StackActions.popToTop())
+            }}>
 
                 <Icon
                     style={{ marginStart: 10 }}
@@ -283,7 +291,7 @@ function Settings(props) {
                     ssize={18}
                     color={colors.inactive}
                 />
-            </View>
+            </TouchableOpacity>
             <View style={{
                 height: 40,
                 backgroundColor: 'rgba(0,0,0,0.2)',
@@ -295,7 +303,7 @@ function Settings(props) {
                     fontSize: fontSizes.h4,
                     color: 'red',
                     paddingStart: 10,
-                    fontWeight : 'bold'
+                    fontWeight: 'bold'
                 }}>Security</Text>
             </View>
             <View style={{
@@ -318,13 +326,13 @@ function Settings(props) {
                 }}>Lock out in background</Text>
                 <View style={{ flex: 1 }} ></View>
                 <Switch
-                    trackColor={{false : colors.inactive, true : colors.primary}} 
-                    thumbColor={isEnabledLockApp ? colors.primary: colors.inactive}    
-                    onValueChange={() =>{
+                    trackColor={{ false: colors.inactive, true: colors.primary }}
+                    thumbColor={isEnabledLockApp ? colors.primary : colors.inactive}
+                    onValueChange={() => {
                         setEnabledLockApp(!isEnabledLockApp)
                     }}
-                    value = {isEnabledLockApp}
-                    style ={{
+                    value={isEnabledLockApp}
+                    style={{
                         paddingEnd: 10
                     }}
                 />
@@ -349,13 +357,13 @@ function Settings(props) {
                 }}>Use Fingerprint</Text>
                 <View style={{ flex: 1 }} ></View>
                 <Switch
-                    trackColor={{false : colors.inactive, true :colors.primary}} 
-                    thumbColor={isEnabledFingerprint ? colors.primary: colors.inactive}    
-                    onValueChange={() =>{
+                    trackColor={{ false: colors.inactive, true: colors.primary }}
+                    thumbColor={isEnabledFingerprint ? colors.primary : colors.inactive}
+                    onValueChange={() => {
                         setEnabledFingerprint(!isEnabledFingerprint)
                     }}
-                    value = {isEnabledFingerprint}
-                    style ={{
+                    value={isEnabledFingerprint}
+                    style={{
                         paddingEnd: 10
                     }}
                 />
@@ -380,13 +388,13 @@ function Settings(props) {
                 }}>Changed Password</Text>
                 <View style={{ flex: 1 }} ></View>
                 <Switch
-                    trackColor={{false : colors.inactive, true : colors.primary}} 
-                    thumbColor={isEnabledChangePassword ? colors.primary: colors.inactive}    
-                    onValueChange={() =>{
+                    trackColor={{ false: colors.inactive, true: colors.primary }}
+                    thumbColor={isEnabledChangePassword ? colors.primary : colors.inactive}
+                    onValueChange={() => {
                         setEnabledChangePassword(!isEnabledChangePassword)
                     }}
-                    value = {isEnabledChangePassword}
-                    style ={{
+                    value={isEnabledChangePassword}
+                    style={{
                         paddingEnd: 10
                     }}
                 />
@@ -402,7 +410,7 @@ function Settings(props) {
                     fontSize: fontSizes.h4,
                     color: 'red',
                     paddingStart: 10,
-                    fontWeight : 'bold'
+                    fontWeight: 'bold'
                 }}>Misc</Text>
             </View>
             <View style={{
