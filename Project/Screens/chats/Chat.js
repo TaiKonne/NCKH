@@ -41,8 +41,9 @@ function Chat(props) {
     useEffect(() => {
         onValue(firebaseDatabaseRef(firebaseDatabase, 'users'), (snapshot) => {
             if (snapshot.exists()) {
-                let value = snapshot.val()
-                setusers(Object.values(value).map(eachObject => {
+                let snapshotObject = snapshot.val()
+                setusers(Object.keys(snapshotObject).map(eachKey => {
+                    let snapObject = snapshotObject[eachKey]
                     return {
                         //profile mặc định của url
                         url: 'https://scontent.fsgn5-6.fna.fbcdn.net/v/t39.30808-6/308603103_805948500437474_2230413659663098451_n.jpg?stp=cp6_dst-jpg&_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=3oKzIsQAkdoAX9bHwIy&_nc_ht=scontent.fsgn5-6.fna&oh=00_AfAAklXdyT-NAnXYzXWj4PBzZ_2QOijwG3n33TZT-SDyLQ&oe=640452BD',
@@ -50,6 +51,7 @@ function Chat(props) {
                         email: eachObject.email,
                         accessToken: eachObject.accessToken,
                         numberOfUnreadMessages: 0,
+                        userId: eachKey,
                     }
                 }))
             }

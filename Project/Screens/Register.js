@@ -204,14 +204,6 @@ function Register(props) {
                             sendEmailVerification(user).then(() => {
                                 console.log('Đã gửi xác nhận đến mail, xin hãy kiểm tra.')
                             })
-                            firebaseSet(firebaseDatabaseRef( // tạo ra user mới và lưu các thông tin lại
-                                firebaseDatabase,
-                                `users/${user.uid}`
-                            ), {
-                                email: user.email,
-                                emailVerified: user.emailVerified,
-                                accessToken: user.accessToken,
-                            })
                             navigate('UITab')
                         }).catch((error) => {
                             alert(`Cannot signin, error: ${error.message}`) //nếu không thành công thì thông báo lỗi

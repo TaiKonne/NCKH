@@ -9,16 +9,16 @@ import {
     KeyboardAvoidingView,
     Keyboard
 } from 'react-native'
-// import {    
-//     onAuthStateChanged,
-//     firebaseDatabaseRef,
-//     firebaseSet,
-//     firebaseDatabase,
-//     auth,
-//     createUserWithEmailAndPassword,
-//     sendEmailVerification,
-//     signInWithEmailAndPassword,
-// } from '../firebase/firebase'
+import {
+    onAuthStateChanged,
+    firebaseDatabaseRef,
+    firebaseSet,
+    firebaseDatabase,
+    auth,
+    createUserWithEmailAndPassword,
+    sendEmailVerification,
+    signInWithEmailAndPassword,
+} from '../Firebase/firebase'
 
 import { images, colors, icons, fontSizes } from '../constants'
 import Icon from 'react-native-vector-icons/FontAwesome5'
@@ -164,15 +164,22 @@ function Login(props) {
             <TouchableOpacity
                 disabled={isValidationOK() == false}
                 onPress={() => {
-                    alert(`Email = ${email}, password = ${password}`)
-                    navigate('UITab')
+                    // alert(`Email = ${email}, password = ${password}`)
+                    signInWithEmailAndPassword(auth, email, password) // lấy thông tin từ auth để tạo account
+                        .then((userCredential) => {
+                            const user = userCredential.user // thành công thì tạo
+                            // sendEmailVerification(user).then(() => {
+                            //     console.log('Đã gửi xác nhận đến mail, xin hãy kiểm tra.')
+                            // })
+                            navigate('UITab')
+                        }).catch((error) => {
+                            alert(`Cannot signin, error: ${error.message}`) //nếu không thành công thì thông báo lỗi
+                        })
                     // signInWithEmailAndPassword(auth, email, password)
                     // .then((userCredential) => {                        
-                    //     const user = userCredential.user  
-                    //     debugger                      
+                    //     const user = userCredential.user                      
                     //     navigate('UITab')    
                     // }).catch((error) => {
-                    //     debugger
                     //     alert(`Cannot signin, error: ${error.message}`)
                     // })                    
                 }}

@@ -16,24 +16,30 @@ import {
     firebaseSet,
     firebaseDatabase
 } from '../Firebase/firebase'
+import AsyncStorage from '@react-native-async-storage/async-storage'
+
 function Welcome(props) {
 
     const { navigation, route } = props
     const { navigate, goBack } = navigation
     useEffect(() => {
-        onAuthStateChanged(auth, (user) => {
-            if (user) {
+        onAuthStateChanged(auth, (responseUser) => {
+
+            if (responseUser) {
                 //signed in
-                const userId = user.uid
                 // save data to firebase
+                let user = {
+                    userId: responseUser.uid,
+                    email: responseUser.email,
+                    emailVerified: responseUser.emailVerified,
+                    accessToken: responseUser.accessToken,
+                }
                 firebaseSet(firebaseDatabaseRef(
                     firebaseDatabase,
-                    `users/${userId}`
-                ), {
-                    email: user.email,
-                    emailVerified: user.emailVerified,
-                    accessToken: user.accessToken,
-                })
+                    `users/${responseUser.uid}`
+                ), user)
+                // save user to local storage
+                AsyncStorage.setItem("user", JSON.stringify(user))
                 navigate('UITab')
             }
             else {
@@ -194,7 +200,6 @@ export default Welcome
 //     const { name, age, email } = person
 //     const { products } = props
 
-//     // debugger
 
 //     return <View>
 //         <Text>Value of x: {x}, value of {y}</Text>

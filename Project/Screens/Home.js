@@ -53,10 +53,10 @@ function Home(props) {
             },
             {
                 name: 'Minh Thắng NO.1 coder',
-                avatar: 'https://scontent.fsgn3-1.fna.fbcdn.net/v/t39.30808-1/295734462_1272754933256041_6976567951737309521_n.jpg?stp=dst-jpg_p320x320&_nc_cat=104&ccb=1-7&_nc_sid=7206a8&_nc_ohc=Pj28Gj1ybQYAX8dHdLo&_nc_ht=scontent.fsgn3-1.fna&oh=00_AfAWQ7NLohNm6Uj-JGVhVCUZJwEdTLM6L2zVZe0R9tZwzQ&oe=63F6A221',
+                avatar: 'https://scontent.fsgn5-5.fna.fbcdn.net/v/t39.30808-6/269591663_1134424887089047_6585705335842786656_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=174925&_nc_ohc=gF6I9Q0kU8YAX__5CPJ&_nc_ht=scontent.fsgn5-5.fna&oh=00_AfCks4uzPgJ03VqEx71xL8Hru5erjqNPer_o3308sa9fdg&oe=6403A077',
                 status: 'Trời ơi, hôm nay trời đẹp thế nhỉ',
                 video: '',
-                ima: 'https://scontent.fsgn13-4.fna.fbcdn.net/v/t39.30808-6/309156219_472048304944448_1140633890876958604_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=63DPgZhrdBsAX9qGngg&_nc_ht=scontent.fsgn13-4.fna&oh=00_AfCRe5m757qmWmd9d1s0wvM2goo-ULRYrKp1DEHiNirsfg&oe=63F90DB6',
+                ima: 'https://scontent.fsgn5-11.fna.fbcdn.net/v/t39.30808-6/309156219_472048304944448_1140633890876958604_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=NmxO828yUu0AX-i6DJc&_nc_ht=scontent.fsgn5-11.fna&oh=00_AfCqMaiVkd47Q6XAa5N7B3GayoZs2Snez3r_LpKq6pQpxA&oe=6404EB36',
                 interact:
                 {
                     likes: '12',

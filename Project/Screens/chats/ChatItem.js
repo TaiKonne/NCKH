@@ -28,6 +28,7 @@ function ChatItem(props) {
         url,
         firstMessage,
         numberofmessageunread,
+        userId,
     } = props.user
     const { onPress } = props
     return (
