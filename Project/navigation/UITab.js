@@ -43,16 +43,6 @@ function UITab(props) {
     return <Tab.Navigator screenOptions={screenOptions}
         style={{ flexDirection: 'row', }}
     >
-        {/* <Tab.Screen
-            name={"Products"}
-            component={ProductGridView}
-            options={{
-                tabBarLable: 'products',
-                tabBarLabelStyle: {
-                    fontSize: fontSizes.h6
-                }
-            }}
-        /> */}
         <Tab.Screen
             name={"Home"}
             component={Home}
@@ -76,7 +66,7 @@ function UITab(props) {
             name={"Chat"}
             component={Chat}
             options={{
-                tabBarLable: 'products',
+                tabBarLable: 'Chat',
                 tabBarLabelStyle: {
                     fontSize: fontSizes.h6
                 }

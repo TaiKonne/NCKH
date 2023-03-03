@@ -36,7 +36,7 @@ function Settings(props) {
             }} >
                 <Text style={{
                     color: 'black',
-                    fontSize: fontSizes.h4,
+                    fontSize: fontSizes.h3,
                     color: 'red',
                     paddingStart: 10,
                     fontWeight: 'bold'
@@ -55,14 +55,14 @@ function Settings(props) {
                 />
                 <Text style={{
                     color: 'black',
-                    fontSize: fontSizes.h6,
+                    fontSize: fontSizes.h3*0.8,
                     paddingStart: 10,
 
                 }}>Language</Text>
                 <View style={{ flex: 1 }} ></View>
                 <Text style={{
                     color: colors.inactive,
-                    fontSize: fontSizes.h6,
+                    fontSize: fontSizes.h3*0.8,
                     paddingStart: 10,
                     paddingEnd: 10
                 }}>English</Text>
@@ -86,14 +86,14 @@ function Settings(props) {
                 />
                 <Text style={{
                     color: 'black',
-                    fontSize: fontSizes.h6,
+                    fontSize: fontSizes.h3*0.8,
                     paddingStart: 10,
 
                 }}>Environment</Text>
                 <View style={{ flex: 1 }} ></View>
                 <Text style={{
                     color: colors.inactive,
-                    fontSize: fontSizes.h6,
+                    fontSize: fontSizes.h3*0.8,
                     paddingStart: 10,
                     paddingEnd: 10
                 }}>Production</Text>
@@ -113,7 +113,7 @@ function Settings(props) {
             }} >
                 <Text style={{
                     color: 'black',
-                    fontSize: fontSizes.h4,
+                    fontSize: fontSizes.h3,
                     color: 'red',
                     paddingStart: 10,
                     fontWeight: 'bold'
@@ -132,7 +132,7 @@ function Settings(props) {
                 />
                 <Text style={{
                     color: 'black',
-                    fontSize: fontSizes.h6,
+                    fontSize: fontSizes.h3*0.8,
                     paddingStart: 10,
 
                 }}>Date Of Birth</Text>
@@ -157,7 +157,7 @@ function Settings(props) {
                 />
                 <Text style={{
                     color: 'black',
-                    fontSize: fontSizes.h6,
+                    fontSize: fontSizes.h3*0.8,
                     paddingStart: 10,
 
                 }}>Gender</Text>
@@ -182,7 +182,7 @@ function Settings(props) {
                 />
                 <Text style={{
                     color: 'black',
-                    fontSize: fontSizes.h6,
+                    fontSize: fontSizes.h3*0.8,
                     paddingStart: 10,
 
                 }}>Address</Text>
@@ -203,7 +203,7 @@ function Settings(props) {
             }} >
                 <Text style={{
                     color: 'black',
-                    fontSize: fontSizes.h4,
+                    fontSize: fontSizes.h3,
                     color: 'red',
                     paddingStart: 10,
                     fontWeight: 'bold'
@@ -222,7 +222,7 @@ function Settings(props) {
                 />
                 <Text style={{
                     color: 'black',
-                    fontSize: fontSizes.h6,
+                    fontSize: fontSizes.h3*0.8,
                     paddingStart: 10,
 
                 }}>Phone number</Text>
@@ -247,7 +247,7 @@ function Settings(props) {
                 />
                 <Text style={{
                     color: 'black',
-                    fontSize: fontSizes.h6,
+                    fontSize: fontSizes.h3*0.8,
                     paddingStart: 10,
 
                 }}>Email</Text>
@@ -280,7 +280,7 @@ function Settings(props) {
                 />
                 <Text style={{
                     color: 'black',
-                    fontSize: fontSizes.h6,
+                    fontSize: fontSizes.h3*0.8,
                     paddingStart: 10,
 
                 }}>Sign Out</Text>
@@ -288,7 +288,7 @@ function Settings(props) {
                 <Icon
                     style={{ marginEnd: 10 }}
                     name='chevron-right'
-                    ssize={18}
+                    size={18}
                     color={colors.inactive}
                 />
             </TouchableOpacity>
@@ -300,7 +300,7 @@ function Settings(props) {
             }} >
                 <Text style={{
                     color: 'black',
-                    fontSize: fontSizes.h4,
+                    fontSize: fontSizes.h3,
                     color: 'red',
                     paddingStart: 10,
                     fontWeight: 'bold'
@@ -320,7 +320,7 @@ function Settings(props) {
                 />
                 <Text style={{
                     color: 'black',
-                    fontSize: fontSizes.h6,
+                    fontSize: fontSizes.h3*0.8,
                     paddingStart: 10,
 
                 }}>Lock out in background</Text>
@@ -351,7 +351,7 @@ function Settings(props) {
                 />
                 <Text style={{
                     color: 'black',
-                    fontSize: fontSizes.h6,
+                    fontSize: fontSizes.h3*0.8,
                     paddingStart: 10,
 
                 }}>Use Fingerprint</Text>
@@ -382,7 +382,7 @@ function Settings(props) {
                 />
                 <Text style={{
                     color: 'black',
-                    fontSize: fontSizes.h6,
+                    fontSize: fontSizes.h3*0.8,
                     paddingStart: 10,
 
                 }}>Changed Password</Text>
@@ -407,7 +407,7 @@ function Settings(props) {
             }} >
                 <Text style={{
                     color: 'black',
-                    fontSize: fontSizes.h4,
+                    fontSize: fontSizes.h3,
                     color: 'red',
                     paddingStart: 10,
                     fontWeight: 'bold'
@@ -426,7 +426,7 @@ function Settings(props) {
                 />
                 <Text style={{
                     color: 'black',
-                    fontSize: fontSizes.h6,
+                    fontSize: fontSizes.h3*0.8,
                     paddingStart: 10,
 
                 }}>Terms of Service</Text>
@@ -451,7 +451,7 @@ function Settings(props) {
                 />
                 <Text style={{
                     color: 'black',
-                    fontSize: fontSizes.h6,
+                    fontSize: fontSizes.h3*0.8,
                     paddingStart: 10,
 
                 }}>Open source licenses</Text>

@@ -19,7 +19,6 @@ import {
 import AsyncStorage from '@react-native-async-storage/async-storage'
 
 function Welcome(props) {
-
     const { navigation, route } = props
     const { navigate, goBack } = navigation
     useEffect(() => {
@@ -52,7 +51,7 @@ function Welcome(props) {
         flex: 100
     }}>
         <ImageBackground source={
-            images.background
+            images.hoa_giay_1
         }
             resizeMode='cover'
             style={{
@@ -68,22 +67,25 @@ function Welcome(props) {
                     flexDirection: 'row',
                     height: 70,
                     justifyContent: 'flex-start',
-                    alignItems: 'center'
+                    alignItems: 'center',
                 }}>
                     <Image
-                        source={icons.fire}
+                        source={require('../front_end/logo_bd.png')}
                         style={{
-                            width: 60,
-                            height: 70,
+                            width: 40,
+                            height: 40,
+                            marginStart:5,
                             // alignSelf:'center'
                             // marginHorizontal:10 cho xung quanh khoản cách là 10px
                         }}
 
                     />
                     <Text style={{
-                        color: 'white'
+                        color: 'white',
+                        marginStart:5,
+                        fontWeight:'bold',
                     }}>
-                        Welcome to the University
+                        Welcome to the Thu Dau Mot University
                     </Text>
                     <View style={{ flex: 1 }} />
                     <Icon name={"question-circle"}
@@ -104,46 +106,77 @@ function Welcome(props) {
                         }}
                     /> */}
                 </View>
+                
+            </View>
+            <View style={{
+                flex: 20,
+                // flexDirection: 'row',
+                // width:'100%',
+                // height:'100%',
+                marginTop: 90,
+                justifyContent: 'center',
+                alignItems: 'center',
+                // borderColor:'yello',
+                // borderWidth:1,
+                // alignSelf:'center',
+                // backgroundColor:'green',
+            }} >
+                <Image
+                    source={require('../front_end/tdmu_logo.png')}
+                    style={{
+                        width: 250,
+                        height: 120,
+                        // borderColor:'yello',
+                        // borderWidth:1,
+                        // alignItems: 'center',
+                        // alignSelf:'center'
+                        // marginHorizontal:10 cho xung quanh khoản cách là 10px
+                    }}
 
+                />
             </View>
             <View style={{ // part 1
-                flex: 15,
+                flex: 20,
                 width: '100%',
                 justifyContent: 'center',
                 alignItems: 'center',
-                borderWidth: 1,
-                borderColor: 'yellow',
+                // borderWidth: 1,
+                // borderColor: 'yellow',
                 marginTop: 20
             }}>
                 <Text
                     style={{
+                        color:'white',
                         fontWeight: 'bold',
-                        fontSize: 13
+                        fontSize: 20,
+
                     }}>
-                    Welcome to main screen!!
+                    Welcome to
                 </Text>
                 <Text
                     style={{
                         marginBottom: 7,
                         color: 'white',
                         fontWeight: 'bold',
-                        fontSize: 16
-                    }}>SOCIAL NETWORK OF THU DAU MOT UNIVERSITY
+                        fontSize: 25,
+                        textAlign:'center',
+                    }}>SOCIAL NETWORK OF
                 </Text>
                 <Text
                     style={{
                         marginBottom: 7,
                         color: 'white',
                         fontWeight: 'bold',
-                        fontSize: 14
-                    }}>Please select your account type!
+                        fontSize: 25,
+                        textAlign:'center',
+                    }}>THU DAU MOT UNIVERSITY
                 </Text>
             </View>
             <View style={{ // part 3
                 // backgroundColor: 'red',
                 flex: 30,
-                borderWidth: 1,
-                borderColor: 'yellow',
+                // borderWidth: 1,
+                // borderColor: 'yellow',
                 // marginVertical:'center',
                 justifyContent: 'center',
                 marginTop: 20
@@ -157,14 +190,13 @@ function Welcome(props) {
             </View>
             <View style={{ // part 4
                 // backgroundColor: 'yellow',
-                flex: 20,
+                flex: 15,
 
             }}>
             </View>
         </ImageBackground >
     </View >
 }
-
 export default Welcome
 
 

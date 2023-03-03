@@ -40,7 +40,7 @@ function UIHeader(props)
             onPress={onPressLeftIcon}       
         /> : <View style={{width:50 , height: 50 ,}} />}
        <Text style={{
-            fontSize : fontSizes.h3,
+            fontSize : fontSizes.h1,
             alignSelf : 'center',
             lineHeight: 45,
             color : 'white',
