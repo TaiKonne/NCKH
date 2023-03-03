@@ -32,9 +32,9 @@ function Home(props) {
                 ima: 'https://tophinhanhdep.com/wp-content/uploads/2021/10/Adventure-Time-Wallpapers.jpg',
                 interact:
                 {
-                    likes: '12',
-                    cmt: '1',
-                    share: '',
+                    likes: 12,
+                    cmt: 1,
+                    share: 83,
                 }
 
             },
@@ -46,9 +46,9 @@ function Home(props) {
                 ima: 'https://images.baodantoc.vn/uploads/2022/Th%C3%A1ng%205/Ng%C3%A0y_26/Anh/untitled%20folder/282030013_551948049833120_1274640577714723578_n.jpg',
                 interact:
                 {
-                    likes: '14',
-                    cmt: '11',
-                    share: '',
+                    likes: 14,
+                    cmt: 11,
+                    share: 44,
                 }
             },
             {
@@ -59,9 +59,9 @@ function Home(props) {
                 ima: 'https://scontent.fsgn5-11.fna.fbcdn.net/v/t39.30808-6/309156219_472048304944448_1140633890876958604_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=NmxO828yUu0AX-i6DJc&_nc_ht=scontent.fsgn5-11.fna&oh=00_AfCqMaiVkd47Q6XAa5N7B3GayoZs2Snez3r_LpKq6pQpxA&oe=6404EB36',
                 interact:
                 {
-                    likes: '12',
-                    cmt: '1',
-                    share: '',
+                    likes: 16,
+                    cmt: 1,
+                    share: 666,
                 }
             },
             {
@@ -72,9 +72,9 @@ function Home(props) {
                 ima: '',
                 interact:
                 {
-                    likes: '12',
-                    cmt: '1',
-                    share: '',
+                    likes: 19,
+                    cmt: 211,
+                    share: 122,
                 }
             },
             {
@@ -85,9 +85,9 @@ function Home(props) {
                 ima: '',
                 interact:
                 {
-                    likes: '12',
-                    cmt: 'Cho mượt 5 chịu',
-                    share: '',
+                    likes: 30,
+                    cmt: 4,
+                    share: 12,
                 }
             },
             {
@@ -98,9 +98,9 @@ function Home(props) {
                 ima: '',
                 interact:
                 {
-                    likes: '1',
-                    cmt: 'Cho mượt 5 chịu',
-                    share: '',
+                    likes: 1000,
+                    cmt: 40,
+                    share: 1,
                 }
             }
         ]
@@ -122,7 +122,7 @@ function Home(props) {
             <Icon
                 style={{
                     position: 'absolute',
-                    top: 12,
+                    top: 9,
                     left: 10
                 }}
                 name='search' size={20} color={'black'} />
@@ -132,7 +132,7 @@ function Home(props) {
                     setSearchText(text)
                 }}
                 style={{
-                    backgroundColor: 'blue',
+                    // backgroundColor: 'blue',
                     height: 40,
                     flex: 1,
                     paddingStart: 20,
