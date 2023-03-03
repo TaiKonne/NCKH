@@ -11,7 +11,7 @@ import {
 import { NavigationContainer } from "@react-navigation/native"
 import { createNativeStackNavigator } from "@react-navigation/native-stack"
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
-import { Welcome, Login, Register, Messenger, Home, ListFriend, PicStorage } from '../Screens'
+import { Welcome, Login, Register, Messenger, Home, ListFriend, PicStorage , MessengerItem} from '../Screens'
 import UITab from "./UITab"
 const Stack = createNativeStackNavigator()
 
@@ -28,6 +28,7 @@ function App(props) {
             <Stack.Screen name={"Home"} component={Home} />
             <Stack.Screen name={"ListFriend"} component={ListFriend} />
             <Stack.Screen name={"PicStorage"} component={PicStorage} />
+            <Stack.Screen name={"MessengerItem"} component={MessengerItem} />
         </Stack.Navigator>
     </NavigationContainer>
 }

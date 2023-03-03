@@ -23,6 +23,9 @@ import { ScrollView } from 'react-native-gesture-handler';
 
 function Profile(props) {
     // UserRepository.getUserDetail()
+    const [add,setAdd]=useState(0);
+    const[view,setview] = useState('Theo dõi')
+
 
     const [user, setUser] = useState({})
     useEffect(() => {
@@ -76,7 +79,17 @@ function Profile(props) {
         }}>
             {/* add friend */}
             <TouchableOpacity onPress={() => {
-                alert('add friend')
+                // alert('add friend')
+                if(add == 0)
+                {
+                    setview('Đã theo dõi')
+                    setAdd(1)
+                }
+                else 
+                {
+                    setview('  Theo dõi  ')
+                    setAdd(0)
+                }
             }}>
                 <View style={{
                     backgroundColor: colors.primary,
@@ -87,22 +100,34 @@ function Profile(props) {
                     borderRadius: 10,
 
                 }}>
-                    <Icon
+                    {/* <Icon
                         style={{ marginEnd: 10 }}
                         name='user-plus'
                         size={20}
                         color={colors.inactive}
-                    />
+                    /> */}
+                    {add==0 ? <Icon
+                        style={{ marginEnd: 10 }}
+                        name='user-plus'
+                        size={20}
+                        color={colors.inactive}
+                    /> : <Icon
+                            style={{ marginEnd: 10 }}
+                            name='check'
+                            size={20}
+                            color={colors.inactive}
+                        />}
                     <Text style={{
                         fontSize: fontSizes.h4,
                         color: 'black'
-                    }} >Thêm bạn bè</Text>
+                    }} >{view}</Text>
                 </View>
             </TouchableOpacity>
             <View style={{ flex: 1 }}></View>
             {/* inbox */}
             <TouchableOpacity onPress={() => {
                 alert('Go to Messenger')
+                // navigate('Messenger')
             }}>
                 <View style={{
                     backgroundColor: colors.primary,

@@ -11,6 +11,7 @@ import Register from "./Register"
 import Messenger from "./Messenger/Messenger"
 import ListFriend from "./ListFriend/ListFriend"
 import PicStorage from "./PicStorage/PicStorage"
+import MessengerItem from "./Messenger/MessengerItem"
 export {
     Welcome,
     Login,
@@ -23,6 +24,7 @@ export {
     Settings,
     Profile,
     Messenger,
+    MessengerItem,
     ListFriend,
     PicStorage
 }
