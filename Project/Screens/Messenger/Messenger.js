@@ -6,7 +6,7 @@ import {
     ImageBackground,
     TouchableOpacity,
     FlatList,
-    Keyboard
+    Keyboard,
 } from 'react-native'
 import { images, colors, icons, fontSizes } from '../../constants'
 import Icon from 'react-native-vector-icons/FontAwesome5'
@@ -132,9 +132,7 @@ function Messenger(props) {
                 if (typedText.trim().length == 0) {
                     return
                 }
-                
                 let stringUser = await AsyncStorage.getItem("user")
-                // const userId = user.uid
                 let myUserId = JSON.parse(stringUser).userId
                 let myFriendUserId = props.route.params.user.userId
                 let newMessengerObject = {
@@ -145,10 +143,13 @@ function Messenger(props) {
                     messenger: typedText,
                     timestamp: (new Date()).getTime(),
                 }
+                Keyboard.dismiss()
                 firebaseSet(firebaseDatabaseRef(
                     firebaseDatabase,
-                    `chats/${myUserId - myFriendUserId}`
-                ), newMessengerObject)
+                    `chats/${myUserId} - ${myFriendUserId}`
+                ), newMessengerObject).then(() => {
+                    setTypedText('')
+                })
             }}>
                 <Icon style={{
                     // padding: 10,
